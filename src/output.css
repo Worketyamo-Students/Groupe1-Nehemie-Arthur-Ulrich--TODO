@@ -13,6 +13,7 @@
     --color-purple-300: oklch(0.827 0.119 306.383);
     --color-white: #fff;
     --spacing: 0.25rem;
+    --tracking-normal: 0em;
     --radius-2xl: 1rem;
     --drop-shadow-md: 0 3px 3px rgb(0 0 0 / 0.12);
     --drop-shadow-lg: 0 4px 4px rgb(0 0 0 / 0.15);
@@ -1848,6 +1849,50 @@
     --tw-font-weight: 700;
     font-weight: 700;
   }
+  .tracking-\[\.\(\)\] {
+    --tw-tracking: .();
+    letter-spacing: .();
+  }
+  .tracking-\[\.5\] {
+    --tw-tracking: .5;
+    letter-spacing: .5;
+  }
+  .tracking-\[\.5r\] {
+    --tw-tracking: .5r;
+    letter-spacing: .5r;
+  }
+  .tracking-\[\.5re\] {
+    --tw-tracking: .5re;
+    letter-spacing: .5re;
+  }
+  .tracking-\[\.5rem\] {
+    --tw-tracking: .5rem;
+    letter-spacing: .5rem;
+  }
+  .tracking-\[\.7rem\] {
+    --tw-tracking: .7rem;
+    letter-spacing: .7rem;
+  }
+  .tracking-\[\.\] {
+    --tw-tracking: .;
+    letter-spacing: .;
+  }
+  .tracking-\[\.rem\] {
+    --tw-tracking: .rem;
+    letter-spacing: .rem;
+  }
+  .tracking-\[1rem\] {
+    --tw-tracking: 1rem;
+    letter-spacing: 1rem;
+  }
+  .tracking-\[rem\] {
+    --tw-tracking: rem;
+    letter-spacing: rem;
+  }
+  .tracking-normal {
+    --tw-tracking: var(--tracking-normal);
+    letter-spacing: var(--tracking-normal);
+  }
   .text-balance {
     text-wrap: balance;
   }
@@ -2946,6 +2991,41 @@
       gap: calc(var(--spacing) * 2);
     }
   }
+  .lg\:gap-4 {
+    @media (width >= 64rem) {
+      gap: calc(var(--spacing) * 4);
+    }
+  }
+  .lg\:gap-5 {
+    @media (width >= 64rem) {
+      gap: calc(var(--spacing) * 5);
+    }
+  }
+  .lg\:gap-\[\.2rem\] {
+    @media (width >= 64rem) {
+      gap: .2rem;
+    }
+  }
+  .lg\:gap-\[\.3rem\] {
+    @media (width >= 64rem) {
+      gap: .3rem;
+    }
+  }
+  .lg\:gap-\[\.4rem\] {
+    @media (width >= 64rem) {
+      gap: .4rem;
+    }
+  }
+  .lg\:gap-\[\.25rem\] {
+    @media (width >= 64rem) {
+      gap: .25rem;
+    }
+  }
+  .lg\:gap-\[\.rem\] {
+    @media (width >= 64rem) {
+      gap: .rem;
+    }
+  }
   .lg\:bg-no-repeat {
     @media (width >= 64rem) {
       background-repeat: no-repeat;
@@ -3144,6 +3224,10 @@
   inherits: false;
 }
 @property --tw-font-weight {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-tracking {
   syntax: "*";
   inherits: false;
 }

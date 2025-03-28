@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="text-[10px] overflow-x-hidden" lang="en">
+<html class="text-[10px] overflow-hidden" lang="en">
 
 <head>
     <meta charset="UTF-8" />
@@ -13,20 +13,22 @@
     <link rel="stylesheet" href="./src/style.css" />
 </head>
 
-<body class="font-[Josefin Sans] overflow-x-hidden w-[100vw] h-[100vh]">
+<body class="font-[Josefin Sans] overflow-hidden w-[100vw] h-[100vh]">
 
-    <section class="w-full h-[20rem] bg-[url(./src/img/background-todo.svg)] px-[2.5rem] pt-[3.5rem]">
+    <section class="w-full h-[20rem] bg-[url(./src/img/background-todo.svg)] object-cover px-[2.5rem] pt-[3.5rem] mb-[5rem] lg:h-[31rem] lg:bg-no-repeat lg:px-[45rem] lg:pt-[5rem]">
         <div class="flex flex-col gap-[3rem]">
             <div class="flex justify-between items-center">
-                <h1 class="font-[700] text-[2.5rem] text-white">TODO</h1>
-                <img src="./src/img/light-option.svg" alt="option light">
+                <h1 class="font-[700] text-[2.5rem] text-white lg:text-[4rem]">TODO</h1>
+                <img src="./src/img/light-option.svg" alt="option light" class="lg:w-[2.6rem] lg:h-[2.6rem]">
             </div>
-            <div class="flex items-center gap-5 px-[2rem] py-[1rem] w-full h-[4.8rem] bg-white rounded-[.5rem] blur-[.05rem] drop-shadow-lg">
-                <div class="w-[2rem] h-[2rem] border border-[#c2c7c8] rounded-[50%]"></div>
-                <p class="font-[400] text-[1.2rem] text-[#9495A5]">Create a new todo…</p>
+            <div class="flex items-center gap-5  px-[2rem] py-[1rem] w-full h-[4.8rem] bg-white rounded-[.5rem] blur-[.05rem] drop-shadow-lg lg:h-[6.4rem]">
+                <div class="w-[2rem] h-[2rem] border border-[#c2c7c8] rounded-[50%] lg:w-[2.4rem] lg:h-[2.4rem]"></div>
+                <p class="font-[400] text-[1.2rem] text-[#9495A5] lg:text-[1.8rem] lg:text-[#393A4B]">Create a new todo…</p>
             </div>
         </div>
     </section>
+
+    <h1 class="font-[400] text-[1.4rem] text-[#9495A5] text-center mb-[5rem] lg:mb-[8rem]">Drag and drop to reorder list   </h1>
 
     <script src="./src/todo.js"></script>
 </body>

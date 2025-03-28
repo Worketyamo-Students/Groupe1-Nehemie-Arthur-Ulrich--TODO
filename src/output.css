@@ -332,6 +332,9 @@
       max-width: 96rem !important;
     }
   }
+  .mb-\[5rem\] {
+    margin-bottom: 5rem;
+  }
   .box-border {
     box-sizing: border-box;
   }
@@ -959,8 +962,14 @@
     text-overflow: ellipsis;
     white-space: nowrap;
   }
+  .overflow-hidden {
+    overflow: hidden;
+  }
   .overflow-x-hidden {
     overflow-x: hidden;
+  }
+  .overflow-y-hidden {
+    overflow-y: hidden;
   }
   .scroll-auto {
     scroll-behavior: auto;
@@ -1339,6 +1348,12 @@
   .object-top {
     object-position: top;
   }
+  .px-\[0rem\] {
+    padding-inline: 0rem;
+  }
+  .px-\[1\] {
+    padding-inline: 1;
+  }
   .px-\[1rem\] {
     padding-inline: 1rem;
   }
@@ -1356,6 +1371,30 @@
   }
   .px-\[2rem\] {
     padding-inline: 2rem;
+  }
+  .px-\[4rem\] {
+    padding-inline: 4rem;
+  }
+  .px-\[10\] {
+    padding-inline: 10;
+  }
+  .px-\[10r\] {
+    padding-inline: 10r;
+  }
+  .px-\[10re\] {
+    padding-inline: 10re;
+  }
+  .px-\[10rem\] {
+    padding-inline: 10rem;
+  }
+  .px-\[40rem\] {
+    padding-inline: 40rem;
+  }
+  .px-\[45rem\] {
+    padding-inline: 45rem;
+  }
+  .px-\[50rem\] {
+    padding-inline: 50rem;
   }
   .px-\[rem\] {
     padding-inline: rem;
@@ -1380,6 +1419,15 @@
   }
   .pt-\[3\.5rem\] {
     padding-top: 3.5rem;
+  }
+  .pb-\[5\] {
+    padding-bottom: 5;
+  }
+  .pb-\[5r\] {
+    padding-bottom: 5r;
+  }
+  .pb-\[5rem\] {
+    padding-bottom: 5rem;
   }
   .text-center {
     text-align: center;
@@ -1425,6 +1473,9 @@
   }
   .text-\[1\.2rem\] {
     font-size: 1.2rem;
+  }
+  .text-\[1\.4rem\] {
+    font-size: 1.4rem;
   }
   .text-\[2\.5rem\] {
     font-size: 2.5rem;
@@ -1539,6 +1590,9 @@
   }
   .text-\[1\.\] {
     color: 1.;
+  }
+  .text-\[1\.rem\] {
+    color: 1.rem;
   }
   .text-\[1\] {
     color: 1;
@@ -2119,6 +2173,246 @@
   }
   .transform-view {
     transform-box: view-box;
+  }
+  .lg\:mb-\[5rem\] {
+    @media (width >= 64rem) {
+      margin-bottom: 5rem;
+    }
+  }
+  .lg\:mb-\[8rem\] {
+    @media (width >= 64rem) {
+      margin-bottom: 8rem;
+    }
+  }
+  .lg\:mb-\[rem\] {
+    @media (width >= 64rem) {
+      margin-bottom: rem;
+    }
+  }
+  .lg\:h-\[2\.4rem\] {
+    @media (width >= 64rem) {
+      height: 2.4rem;
+    }
+  }
+  .lg\:h-\[2\.6rem\] {
+    @media (width >= 64rem) {
+      height: 2.6rem;
+    }
+  }
+  .lg\:h-\[2\.rem\] {
+    @media (width >= 64rem) {
+      height: 2.rem;
+    }
+  }
+  .lg\:h-\[2rem\] {
+    @media (width >= 64rem) {
+      height: 2rem;
+    }
+  }
+  .lg\:h-\[3\] {
+    @media (width >= 64rem) {
+      height: 3;
+    }
+  }
+  .lg\:h-\[4\.8rem\] {
+    @media (width >= 64rem) {
+      height: 4.8rem;
+    }
+  }
+  .lg\:h-\[4\.rem\] {
+    @media (width >= 64rem) {
+      height: 4.rem;
+    }
+  }
+  .lg\:h-\[4rem\] {
+    @media (width >= 64rem) {
+      height: 4rem;
+    }
+  }
+  .lg\:h-\[6\.4rem\] {
+    @media (width >= 64rem) {
+      height: 6.4rem;
+    }
+  }
+  .lg\:h-\[6\.rem\] {
+    @media (width >= 64rem) {
+      height: 6.rem;
+    }
+  }
+  .lg\:h-\[6rem\] {
+    @media (width >= 64rem) {
+      height: 6rem;
+    }
+  }
+  .lg\:h-\[31\] {
+    @media (width >= 64rem) {
+      height: 31;
+    }
+  }
+  .lg\:h-\[31r\] {
+    @media (width >= 64rem) {
+      height: 31r;
+    }
+  }
+  .lg\:h-\[31re\] {
+    @media (width >= 64rem) {
+      height: 31re;
+    }
+  }
+  .lg\:h-\[31rem\] {
+    @media (width >= 64rem) {
+      height: 31rem;
+    }
+  }
+  .lg\:h-\[rem\] {
+    @media (width >= 64rem) {
+      height: rem;
+    }
+  }
+  .lg\:w-\[2\.4rem\] {
+    @media (width >= 64rem) {
+      width: 2.4rem;
+    }
+  }
+  .lg\:w-\[2\.5rem\] {
+    @media (width >= 64rem) {
+      width: 2.5rem;
+    }
+  }
+  .lg\:w-\[2\.6\] {
+    @media (width >= 64rem) {
+      width: 2.6;
+    }
+  }
+  .lg\:w-\[2\.6r\] {
+    @media (width >= 64rem) {
+      width: 2.6r;
+    }
+  }
+  .lg\:w-\[2\.6re\] {
+    @media (width >= 64rem) {
+      width: 2.6re;
+    }
+  }
+  .lg\:w-\[2\.6rem\] {
+    @media (width >= 64rem) {
+      width: 2.6rem;
+    }
+  }
+  .lg\:w-\[2\.\] {
+    @media (width >= 64rem) {
+      width: 2.;
+    }
+  }
+  .lg\:w-\[2\.rem\] {
+    @media (width >= 64rem) {
+      width: 2.rem;
+    }
+  }
+  .lg\:w-\[2\] {
+    @media (width >= 64rem) {
+      width: 2;
+    }
+  }
+  .lg\:w-\[2rem\] {
+    @media (width >= 64rem) {
+      width: 2rem;
+    }
+  }
+  .lg\:bg-no-repeat {
+    @media (width >= 64rem) {
+      background-repeat: no-repeat;
+    }
+  }
+  .lg\:px-\[45rem\] {
+    @media (width >= 64rem) {
+      padding-inline: 45rem;
+    }
+  }
+  .lg\:pt-\[3\.5rem\] {
+    @media (width >= 64rem) {
+      padding-top: 3.5rem;
+    }
+  }
+  .lg\:pt-\[3\.rem\] {
+    @media (width >= 64rem) {
+      padding-top: 3.rem;
+    }
+  }
+  .lg\:pt-\[3rem\] {
+    @media (width >= 64rem) {
+      padding-top: 3rem;
+    }
+  }
+  .lg\:pt-\[5rem\] {
+    @media (width >= 64rem) {
+      padding-top: 5rem;
+    }
+  }
+  .lg\:pt-\[8rem\] {
+    @media (width >= 64rem) {
+      padding-top: 8rem;
+    }
+  }
+  .lg\:pt-\[rem\] {
+    @media (width >= 64rem) {
+      padding-top: rem;
+    }
+  }
+  .lg\:text-\[1\.2rem\] {
+    @media (width >= 64rem) {
+      font-size: 1.2rem;
+    }
+  }
+  .lg\:text-\[1\.8rem\] {
+    @media (width >= 64rem) {
+      font-size: 1.8rem;
+    }
+  }
+  .lg\:text-\[2\.5rem\] {
+    @media (width >= 64rem) {
+      font-size: 2.5rem;
+    }
+  }
+  .lg\:text-\[2rem\] {
+    @media (width >= 64rem) {
+      font-size: 2rem;
+    }
+  }
+  .lg\:text-\[4rem\] {
+    @media (width >= 64rem) {
+      font-size: 4rem;
+    }
+  }
+  .lg\:text-\[\#\#393A4B\] {
+    @media (width >= 64rem) {
+      color: ##393A4B;
+    }
+  }
+  .lg\:text-\[\#393A4B\] {
+    @media (width >= 64rem) {
+      color: #393A4B;
+    }
+  }
+  .lg\:text-\[\#9495A5\] {
+    @media (width >= 64rem) {
+      color: #9495A5;
+    }
+  }
+  .lg\:text-\[1\.rem\] {
+    @media (width >= 64rem) {
+      color: 1.rem;
+    }
+  }
+  .lg\:text-\[2\.rem\] {
+    @media (width >= 64rem) {
+      color: 2.rem;
+    }
+  }
+  .lg\:text-\[rem\] {
+    @media (width >= 64rem) {
+      color: rem;
+    }
   }
 }
 @property --tw-translate-x {

@@ -13,48 +13,43 @@
     <link rel="stylesheet" href="./src/style.css" />
 </head>
 
-<body class="relative font-[Josefin Sans] overflow-hidden w-[100vw] h-[100vh]">
-
+<body class="relative font-[Josefin Sans] overflow-hidden w-[100vw] h-[100vh] bg-(--background-items)">
     <section
-        class="w-full h-[30%] bg-[url(./src/img/background-todo.svg)] object-cover px-[2.5rem] pt-[3.5rem] mb-[25rem] lg:h-[40%] lg:bg-no-repeat lg:px-[45rem] lg:pt-[3rem] lg:mb-[.1rem]">
+        class="w-full h-[20rem] bg-[url(./src/img/background-todo.svg)] object-cover px-[2.5rem] pt-[3.5rem] mb-[25rem] lg:h-[40%] lg:bg-no-repeat lg:px-[45rem] lg:pt-[3rem] lg:mb-[.1rem]">
         <div class="flex flex-col gap-[3rem]">
             <div class="flex justify-between items-center">
                 <h1 class="font-[700] text-[2.5rem] text-white lg:text-[4rem] tracking-[1rem]">
                     TODO
                 </h1>
-                <img src="./src/img/light-option.svg" alt="option light" class="lg:w-[2.6rem] lg:h-[2.6rem]" />
+                <img src="./src/img/light-option.svg" alt="option light" class="lg:w-[2.6rem] lg:h-[2.6rem] cursor-pointer" id="mode"/>
             </div>
             <div class="flex flex-col gap-[2rem]">
                 <div
-                    class="flex items-center gap-5 px-[2rem] py-[1rem] w-full h-[4.8rem] bg-white rounded-[.5rem] blur-[.05rem] drop-shadow-lg lg:h-[6.4rem]">
+                    class="flex items-center gap-5 px-[2rem] py-[1rem] w-full h-[4.8rem] bg-(--background-items) rounded-[.5rem] blur-[.05rem] drop-shadow-lg lg:h-[6.4rem]">
                     <div
-                        class="flex items-center justify-center w-[2rem] h-[2rem] border border-[#c2c7c8] rounded-[50%] lg:w-[2.4rem] lg:h-[2.4rem]">
+                        class="flex items-center justify-center w-[2rem] h-[2rem] border border-[#c2c7c8] rounded-[50%] lg:w-[2.4rem] lg:h-[2.4rem] bg-linear-[135deg,#55DDFF_0%,#C058F3_100%]">
                         <img src="./src/img/check.svg" alt="" />
                     </div>
-
-                    <input type="text" placeholder="Create a new todo…" class="font-[400] text-[1.2rem] text-[#9495A5] lg:text-[1.8rem] lg:text-[#393A4B] border-none p-3 focus:outline-none">
-
-                    <!-- <p class="font-[400] text-[1.2rem] text-[#9495A5] lg:text-[1.8rem] lg:text-[#393A4B]">
-                        Create a new todo…
-                    </p>  -->
+                    <input type="text" placeholder="Create a new todo…" class="font-[400] text-[1.2rem] text-(--placeholder) lg:text-[1.8rem]  border-none focus:outline-none p-3">
+                    
                 </div>
 
                 <section
-                    class="flex flex-col gap-[.4rem] py-[1rem] bg-white top-0 left-0 rounded-[1rem] blur-[.05rem] drop-shadow-2xl w-auto h-[36.8rem] lg:gap-[.3rem]">
+                    class="flex flex-col gap-[.4rem] py-[1rem] bg-(--background-items) top-0 left-0 rounded-[1rem] blur-[.05rem] drop-shadow-2xl w-auto h-[36.8rem] lg:gap-[.3rem]">
                     <div class="flex px-[2.5rem] py-[1rem] items-center justify-between">
                         <div class="flex items-center gap-5">
                             <div
-                                class="flex items-center justify-center w-[2rem] h-[2rem] border border-[#c2c7c8] rounded-[50%] lg:w-[2.4rem] lg:h-[2.4rem] cursor-pointer">
+                                class="flex items-center justify-center w-[2rem] h-[2rem] border border-[#c2c7c8] rounded-[50%] lg:w-[2.4rem] lg:h-[2.4rem] cursor-pointer bg-linear-[135deg,#55DDFF_0%,#C058F3_100%]">
                                 <img src="./src/img/check.svg" alt="" />
                             </div>
-                            <p class="font-[400] text-[1.2rem] text-[#494C6B]">
-                                Complete online Java
+                            <p class="font-[400] text-[1.2rem] text-(--text-items)">
+                                Complete online JavaScript courses
                             </p>
                         </div>
                         <img src="./src/img/exit-option.svg" alt="option exit" class="cursor-pointer" />
                     </div>
 
-                    <div class="w-full h-[.03rem] bg-[#E3E4F1]"></div>
+                    <div class="w-full h-[.03rem] bg-(--line-color)"></div>
 
                     <div class="flex px-[2.5rem] py-[1rem] items-center justify-between">
                         <div class="flex items-center gap-5">
@@ -62,14 +57,14 @@
                                 class="flex items-center justify-center w-[2rem] h-[2rem] border border-[#c2c7c8] rounded-[50%] lg:w-[2.4rem] lg:h-[2.4rem] cursor-pointer">
                                 <img src="./src/img/check.svg" alt="" />
                             </div>
-                            <p class="font-[400] text-[1.2rem] text-[#494C6B]">
+                            <p class="font-[400] text-[1.2rem] text-(--text-items)">
                                 Jog around the park 3x
                             </p>
                         </div>
                         <img src="./src/img/exit-option.svg" alt="option exit" class="cursor-pointer" />
                     </div>
 
-                    <div class="w-full h-[.03rem] bg-[#E3E4F1]"></div>
+                    <div class="w-full h-[.03rem] bg-(--line-color)"></div>
 
                     <div class="flex px-[2.5rem] py-[1rem] items-center justify-between">
                         <div class="flex items-center gap-5">
@@ -77,14 +72,14 @@
                                 class="flex items-center justify-center w-[2rem] h-[2rem] border border-[#c2c7c8] rounded-[50%] lg:w-[2.4rem] lg:h-[2.4rem] cursor-pointer">
                                 <img src="./src/img/check.svg" alt="" />
                             </div>
-                            <p class="font-[400] text-[1.2rem] text-[#494C6B]">
+                            <p class="font-[400] text-[1.2rem] text-(--text-items)">
                                 10 minutes meditation
                             </p>
                         </div>
                         <img src="./src/img/exit-option.svg" alt="option exit" class="cursor-pointer" />
                     </div>
 
-                    <div class="w-full h-[.03rem] bg-[#E3E4F1]"></div>
+                    <div class="w-full h-[.03rem] bg-(--line-color)"></div>
 
                     <div class="flex px-[2.5rem] py-[1rem] items-center justify-between">
                         <div class="flex items-center gap-5">
@@ -92,14 +87,14 @@
                                 class="flex items-center justify-center w-[2rem] h-[2rem] border border-[#c2c7c8] rounded-[50%] lg:w-[2.4rem] lg:h-[2.4rem] cursor-pointer">
                                 <img src="./src/img/check.svg" alt="" />
                             </div>
-                            <p class="font-[400] text-[1.2rem] text-[#494C6B]">
+                            <p class="font-[400] text-[1.2rem] text-(--text-items)">
                                 Read for 1 hour
                             </p>
                         </div>
                         <img src="./src/img/exit-option.svg" alt="option exit" class="cursor-pointer" />
                     </div>
 
-                    <div class="w-full h-[.03rem] bg-[#E3E4F1]"></div>
+                    <div class="w-full h-[.03rem] bg-(--line-color)"></div>
 
                     <div class="flex px-[2.5rem] py-[1rem] items-center justify-between">
                         <div class="flex items-center gap-5">
@@ -107,14 +102,14 @@
                                 class="flex items-center justify-center w-[2rem] h-[2rem] border border-[#c2c7c8] rounded-[50%] lg:w-[2.4rem] lg:h-[2.4rem] cursor-pointer">
                                 <img src="./src/img/check.svg" alt="" />
                             </div>
-                            <p class="font-[400] text-[1.2rem] text-[#494C6B]">
+                            <p class="font-[400] text-[1.2rem] text-(--text-items)">
                                 Pick up groceries
                             </p>
                         </div>
                         <img src="./src/img/exit-option.svg" alt="option exit" class="cursor-pointer" />
                     </div>
 
-                    <div class="w-full h-[.03rem] bg-[#E3E4F1]"></div>
+                    <div class="w-full h-[.03rem] bg-(--line-color)"></div>
 
                     <div class="flex px-[2.5rem] py-[1rem] items-center justify-between">
                         <div class="flex items-center gap-5">
@@ -122,18 +117,18 @@
                                 class="flex items-center justify-center w-[2rem] h-[2rem] border border-[#c2c7c8] rounded-[50%] lg:w-[2.4rem] lg:h-[2.4rem] cursor-pointer">
                                 <img src="./src/img/check.svg" alt="" />
                             </div>
-                            <p class="font-[400] text-[1.2rem] text-[#494C6B]">
+                            <p class="font-[400] text-[1.2rem] text-(--text-items)">
                                 Complete Todo App on Frontend Mentor
                             </p>
                         </div>
                         <img src="./src/img/exit-option.svg" alt="option exit" class="cursor-pointer" />
                     </div>
 
-                    <div class="w-full h-[.03rem] bg-[#E3E4F1]"></div>
+                    <div class="w-full h-[.03rem] bg-(--line-color)"></div>
 
                     <div class="flex items-center justify-between px-[2.5rem] py-[1rem]">
                         <p
-                            class="font-[400] text-[1.2rem] text-[#9495A5] hover:text-[#494C6B] cursor-pointer transition delay-200 duration-200 ease">
+                            class="font-[400] text-[1.2rem] text-(--select-categories) hover:text-(--hover-select) cursor-pointer transition delay-200 duration-200 ease">
                             5 items left
                         </p>
                         <div class="hidden lg:flex lg:items-center lg:justify-center lg:gap-5">
@@ -141,16 +136,16 @@
                                 All
                             </p>
                             <p
-                                class="font-[700] text-[1.4rem] text-[#9495A5] hover:text-[#494C6B] cursor-pointer transition delay-200 duration-200 ease">
+                                class="font-[700] text-[1.4rem] text-(--select-categories) hover:text-(--hover-select) cursor-pointer transition delay-200 duration-200 ease">
                                 Active
                             </p>
                             <p
-                                class="font-[700] text-[1.4rem] text-[#9495A5] hover:text-[#494C6B] cursor-pointer transition delay-200 duration-200 ease">
+                                class="font-[700] text-[1.4rem] text-(--select-categories) hover:text-(--hover-select) cursor-pointer transition delay-200 duration-200 ease">
                                 Completed
                             </p>
                         </div>
                         <p
-                            class="font-[400] text-[1.2rem] text-[#9495A5] hover:text-[#494C6B] cursor-pointer transition delay-200 duration-200 ease">
+                            class="font-[400] text-[1.2rem] text-(--select-categories) hover:text-(--hover-select) cursor-pointer transition delay-200 duration-200 ease">
                             Clear Completed
                         </p>
                     </div>
@@ -165,20 +160,19 @@
             All
         </h1>
         <h1
-            class="font-[700] text-[1.4rem] text-[#9495A5] hover:text-[#3A7CFD] cursor-pointer transition delay-200 duration-200 ease">
+            class="font-[700] text-[1.4rem] text-(--select-categories) hover:text-(--hover-select) cursor-pointer transition delay-200 duration-200 ease">
             Active
         </h1>
         <h1
-            class="font-[700] text-[1.4rem] text-[#9495A5] hover:text-[#3A7CFD] cursor-pointer transition delay-200 duration-200 ease">
+            class="font-[700] text-[1.4rem] text-(--select-categories) hover:text-(--hover-select) cursor-pointer transition delay-200 duration-200 ease">
             Completed
         </h1>
     </div>
 
     <h1
-        class="lg:absolute lg:bottom-[-6rem] lg:left-[60rem] font-[400] text-[1.4rem] text-[#9495A5] text-center mb-[5rem] lg:mb-[8rem]">
+        class="lg:absolute lg:bottom-[-6rem] lg:left-[60rem] font-[400] text-[1.4rem] text-(--select-categories) text-center mb-[5rem] lg:mb-[8rem]">
         Drag and drop to reorder list
     </h1>
-    <p>une modification</p>
 
     <script src="./src/todo.js"></script>
 </body>

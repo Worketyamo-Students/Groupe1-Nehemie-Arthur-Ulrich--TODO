@@ -1,3 +1,5 @@
+// Implementation du dark mode
+
 var mode = document.getElementById("mode");
 mode.onclick = function(){
     document.body.classList.toggle("dark-theme");
@@ -7,3 +9,4 @@ mode.onclick = function(){
         mode.src = "./src/img/light-option.svg"
     }
 }
+

@@ -10,3 +10,16 @@ mode.onclick = function(){
     }
 }
 
+// Implementation de la touche "enter" pour valider l'entrée de l'utilisateur
+
+let input = document.getElementById('input');
+let parent = document.getElementById('addElement');
+input.addEventListener("keydown", function(event) {
+    if(event.key === "Enter") { 
+        let valeur = this.value;
+        let enfant = document.createElement("p");
+        enfant.textContent = this.value;
+        parent.appendChild(enfant);
+        this.value = "";
+    }
+}) 

@@ -10,3 +10,16 @@ mode.onclick = function(){
     }
 }
 
+//ADD ELEMENTS
+
+let ul = document.getElementById('addElement')
+let input = document.getElementById('input')
+let select = document.getElementById('select')
+
+input.addEventListener('input', (e)=>{
+    if(input.value.length > 4){
+        select.style.background = "linear-gradient(135deg, #55DDFF 0%, #C058F3 100%)"
+        select.innerHTML = '<img src="./src/img/check.svg" alt="" />'
+
+    }
+})

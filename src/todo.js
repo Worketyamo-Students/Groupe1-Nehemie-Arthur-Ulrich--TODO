@@ -20,6 +20,7 @@ let parent = document.getElementById('addElement');
 let check = document.getElementById('check');
 let element = document.getElementById('element'); // Modèle de l'élément ajouté
 let category = document.getElementById('category'); // Appel de la div d'après
+let checkImage = document.getElementById('checkImage');
 
 // Établit le compteur d'élément
 let count = 0; // compteur initialisé à 0
@@ -32,12 +33,11 @@ input.addEventListener("keydown", function (event) {
     if (this.value.length < 4) {
         check.style.backgroundImage = "none"; // le background est désactivé  
     } else {
+        checkImage.style.display = "flex";
         check.style.backgroundImage = "linear-gradient(135deg, #55DDFF 0%, #C058F3 100%)"; // le background est activé
     }
 
     // Ajoute la valeur de l'utilisateur
-
-
 
     if (event.key === "Enter") {
         let valeur = this.value; // affectation de l'entré de l'utilisateur à "valeur"

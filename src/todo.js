@@ -39,13 +39,13 @@ input.addEventListener("keydown", (e)=>{
 
         selector.style.cssText = "background-color: #FFFFFF; display: flex; justify-content: center; align-items: center; width: 2rem; height: 2rem; border: 2px solid #E3E4F1; border-radius: 50%;"
         h2.style.cssText = "font-size: 12px"
-        
+
         input.value = ''
         select.style.background = ""
         select.innerHTML = ''
 
         if(test.length <= 4){
-            alert('Nombre de carateres insuffisant')
+            alert('Entrez au moins 5 caractères')
             ul.removeChild(div)
 
         }

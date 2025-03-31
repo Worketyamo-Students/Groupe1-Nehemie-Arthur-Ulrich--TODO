@@ -17,6 +17,7 @@ let input = document.getElementById('input');
 let parent = document.getElementById('addElement');
 let check = document.getElementById('check');
 let element = document.getElementById('element'); // Modèle de l'élément ajouté
+let category = document.getElementById('category'); // Appel de la div d'après
 
 // Établit le compteur d'élément
 let count = 0;
@@ -51,12 +52,16 @@ input.addEventListener("keydown", function (event) {
             let newElement = element.cloneNode(true);
             newElement.style.display = "flex"; // permet l'affichage de l'élément
             let textElement = newElement.querySelector('#text');
+
             if (textElement) {
                 textElement.textContent = this.value;
             }
 
             parent.appendChild(newElement);
 
+     // Permet que chaque élément soit positionné avant la div "#category"
+     parent.insertBefore(newElement, category); 
+     
             // Efface l'input après validation
             this.value = "";
             check.style.backgroundImage = "none";

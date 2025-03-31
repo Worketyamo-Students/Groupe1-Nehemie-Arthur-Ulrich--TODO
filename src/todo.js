@@ -12,11 +12,12 @@ mode.onclick = function () {
 
 // Implementation de la touche "enter" pour valider l'entrée de l'utilisateur
 
+// Récupération des éléments HTML
 let input = document.getElementById('input');
 let parent = document.getElementById('addElement');
 let check = document.getElementById('check');
-let element = document.getElementById('element');
-let text = document.getElementById('text');
+let element = document.getElementById('element'); // Modèle de l'élément ajouté
+// let text = document.getElementById('text');
 
 input.addEventListener("keydown", function (event) {
 
@@ -31,14 +32,19 @@ input.addEventListener("keydown", function (event) {
     // Ajoute la valeur de l'utilisateur
 
     if (event.key === "Enter") {
-        let valeur = this.value;
-
-        for (let i = 0; i < 6; i++) {
-                 console.log(element);
+        let valeur = this.value.trim();
 
             // Vérifie si la longueur est suffisante
             if (this.value.length >= 5) {
-                text.textContent = this.value;
+                
+                let newElement = element.cloneNode(true);
+                newElement.style.display = "flex";
+                let textElement = newElement.querySelector('#text');
+                if(textElement) {
+                    textElement.textContent = this.value;
+                }
+        
+                parent.appendChild(newElement);
 
                 // Efface l'input après validation
                 this.value = "";
@@ -49,6 +55,7 @@ input.addEventListener("keydown", function (event) {
                 alert("Enter enough characters");
                 check.disabled = true; // Empêche la validation
             }
-        }
+
+
     }
 });

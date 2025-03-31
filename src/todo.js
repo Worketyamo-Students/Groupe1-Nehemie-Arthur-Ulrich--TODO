@@ -33,7 +33,7 @@ input.addEventListener("keydown", (e)=>{
         let test = input.value
 
         let div = document.createElement('div')
-        div.style.cssText = "display: flex; gap: 8px; align-items: center; padding: 16px 20px; border-bottom: 2px solid #E3E4F1;"
+        div.style.cssText = "display: flex; gap: 8px; align-items: center; padding: 12px 20px; border-bottom: 2px solid #E3E4F1;"
         ul.prepend(div)
 
         let selector = document.createElement('div'); div.appendChild(selector);
@@ -43,7 +43,7 @@ input.addEventListener("keydown", (e)=>{
         h2.style.cssText = "font-size: 12px"
 
         let All = all.push(div)
-        console.log(all)
+        // console.log(all)
 
         if(all.length > 6){
             alert('Liste pleine; Vous devez supprimer pour pouvoir ajouter')

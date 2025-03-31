@@ -2,7 +2,9 @@
 
 var mode = document.getElementById("mode");
 mode.onclick = function () {
-    document.body.classList.toggle("dark-theme");
+    // "classList" permet de manipuler les classes CSS d'un élément HTML 
+    // ".toogle" ajoute la classe si elle n'existe pas, supprime si elle est déjà presente
+    document.body.classList.toggle("dark-theme"); 
     if (document.body.classList.contains("dark-theme")) {
         mode.src = "./src/img/dark-option.svg";
     } else {
@@ -20,8 +22,8 @@ let element = document.getElementById('element'); // Modèle de l'élément ajou
 let category = document.getElementById('category'); // Appel de la div d'après
 
 // Établit le compteur d'élément
-let count = 0;
-const maxElement = 5;
+let count = 0; // compteur initialisé à 0
+const maxElement = 5; // nombre maximal d'élément que l'utilisateur peut introduire
 
 input.addEventListener("keydown", function (event) {
 
@@ -38,34 +40,34 @@ input.addEventListener("keydown", function (event) {
 
 
     if (event.key === "Enter") {
-        let valeur = this.value;
+        let valeur = this.value; // affectation de l'entré de l'utilisateur à "valeur"
 
-        if(count >= maxElement){
+        // Condition d'arret si le nombre d'éléments entré est égal à 5
+        if (count >= maxElement) {
             alert("You can only add 5 items.");
-            return;
+            return; // Le "return" empeche l'execution du reste du code si la condition est vérifiée
         }
 
         // Vérifie si la longueur est suffisante
         if (this.value.length >= 5) {
 
             // clonage de l'élément à chaque entrée de l'utilisateur
-            let newElement = element.cloneNode(true);
+            let newElement = element.cloneNode(true); // ".cloneNode(true)" permet de cloner l'element en question ainsi que ses enfants
             newElement.style.display = "flex"; // permet l'affichage de l'élément
             let textElement = newElement.querySelector('#text');
 
             if (textElement) {
                 textElement.textContent = this.value;
             }
+            parent.appendChild(newElement); // Ajout de l'élément dans le DOM
 
-            parent.appendChild(newElement);
+            // Permet que chaque élément soit positionné avant la div "#category"
+            parent.insertBefore(newElement, category);
 
-     // Permet que chaque élément soit positionné avant la div "#category"
-     parent.insertBefore(newElement, category); 
-     
             // Efface l'input après validation
-            this.value = "";
+            this.value = ""; // permet de vider l'input après chaque entrée
             check.style.backgroundImage = "none";
-            count++;
+            count++; // Incrémentation du compteur à chaque entrée de l'utilisateur
         } else {
             check.style.backgroundImage = "none";
             alert("Enter enough characters");

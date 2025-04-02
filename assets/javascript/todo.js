@@ -68,14 +68,21 @@ input.addEventListener("keydown", function (event) {
             //Ajout de l'icone Delete au Hover de la souris
             let se = newElement.querySelector("#sousElement")
             let supp = document.createElement("img")
-            supp.src = "assets/img/exit-option.svg"
+            supp.src = "assets/img/exit-option.svg"; supp.classList = "cursor-pointer"
             newElement.addEventListener('mouseover', () => {
                 se.appendChild(supp)
                 console.log(se)
+
+                //Suppression au click
+                supp.addEventListener('click', () =>{
+                    parent.removeChild(newElement)
+                    count--
+                }) 
             })
             //Retrait de l'icone delete quand on quitte le hover
             newElement.addEventListener('mouseleave', () => {
                 se.removeChild(supp)
+                
             })
 
             // Efface l'input après validation

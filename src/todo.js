@@ -4,7 +4,7 @@ var mode = document.getElementById("mode");
 mode.onclick = function () {
     // "classList" permet de manipuler les classes CSS d'un élément HTML 
     // ".toogle" ajoute la classe si elle n'existe pas, supprime si elle est déjà presente
-    document.body.classList.toggle("dark-theme"); 
+    document.body.classList.toggle("dark-theme");
     if (document.body.classList.contains("dark-theme")) {
         mode.src = "./src/img/dark-option.svg";
     } else {
@@ -45,6 +45,8 @@ input.addEventListener("keydown", function (event) {
         // Condition d'arret si le nombre d'éléments entré est égal à 5
         if (count >= maxElement) {
             alert("You can only add 5 items.");
+            checkImage.style.display = "none";
+            check.style.backgroundImage = "none";
             return; // Le "return" empeche l'execution du reste du code si la condition est vérifiée
         }
 
@@ -63,6 +65,28 @@ input.addEventListener("keydown", function (event) {
 
             // Permet que chaque élément soit positionné avant la div "#category"
             parent.insertBefore(newElement, category);
+
+            // Implémentation de hover
+            let sousElement = newElement.querySelector("#sousElement");
+            let exit = document.createElement("img");
+            exit.src = "./assets/img/exit-option.svg"
+            exit.id = "croix"
+            exit.classList.add("cursor-pointer");
+            newElement.addEventListener("mouseover", () => {
+                sousElement.appendChild(exit);
+            });
+
+            // La croix disparait lorsque la souris est retirer de la section
+            newElement.addEventListener("mouseleave", () => {
+                let exit = newElement.querySelector("#croix");
+                exit.remove();
+            });
+
+            // Suppression de l'élément
+            exit.addEventListener("click", () => {
+                newElement.remove();
+                count--;
+            });
 
             // Efface l'input après validation
             this.value = ""; // permet de vider l'input après chaque entrée

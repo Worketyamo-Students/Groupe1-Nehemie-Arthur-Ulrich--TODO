@@ -73,7 +73,10 @@ input.addEventListener("keydown", function (event) {
                 se.appendChild(supp)
                 console.log(se)
             })
-            
+            //Retrait de l'icone delete quand on quitte le hover
+            newElement.addEventListener('mouseleave', () => {
+                se.removeChild(supp)
+            })
 
             // Efface l'input après validation
             this.value = ""; // permet de vider l'input après chaque entrée

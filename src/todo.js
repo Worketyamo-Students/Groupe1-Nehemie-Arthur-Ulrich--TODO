@@ -69,7 +69,7 @@ input.addEventListener("keydown", function (event) {
             // Implémentation de hover
             let sousElement = newElement.querySelector("#sousElement");
             let exit = document.createElement("img");
-            exit.src = "./assets/img/exit-option.svg"
+            exit.src = "assets/img/exit-option.svg"
             exit.id = "croix"
             exit.classList.add("cursor-pointer");
             newElement.addEventListener("mouseover", () => {

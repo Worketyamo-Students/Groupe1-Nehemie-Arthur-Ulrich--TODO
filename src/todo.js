@@ -65,6 +65,8 @@ input.addEventListener("keydown", function (event) {
 
             // Permet que chaque élément soit positionné avant la div "#category"
             parent.insertBefore(newElement, category);
+            checkImage.style.display = "none";
+
 
             // Implémentation de hover
             let sousElement = newElement.querySelector("#sousElement");
@@ -88,14 +90,19 @@ input.addEventListener("keydown", function (event) {
                 count--;
             });
 
+            let choose = document.getElementById("choose");
+            console.log(choose);
+
             // Efface l'input après validation
             this.value = ""; // permet de vider l'input après chaque entrée
             check.style.backgroundImage = "none";
+            parent.style.display = "flex";
             count++; // Incrémentation du compteur à chaque entrée de l'utilisateur
         } else {
             check.style.backgroundImage = "none";
             alert("Enter enough characters");
             check.disabled = true; // Empêche la validation
+            checkImage.style.display = "none";
         }
     }
 });

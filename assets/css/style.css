@@ -1,0 +1,22 @@
+:root {
+  --background-page: #fff;
+  --background-items: #fff;
+  --placeholder: #393A4B;
+  --text-items: #494C6B;
+  --line-color: #E3E4F1; 
+  --hover-select: #494C6B;
+  --select-categories: #9495A5;
+}
+
+.dark-theme {
+  --background-page: #171823;
+  --background-items: #25273D;
+  --placeholder: #C8CBE7;
+  --text-items: #C8CBE7;
+  --line-color: #393A4B; 
+  --hover-select: #E3E4F1;
+  --select-categories: #5B5E7E;
+}
+#select{
+  
+}

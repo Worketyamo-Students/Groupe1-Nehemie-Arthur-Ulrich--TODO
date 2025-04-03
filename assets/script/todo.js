@@ -70,12 +70,13 @@ input.addEventListener("keydown", function (event) {
             let choose = newElement.querySelector("#choose");
             let selectElement = newElement.querySelector('#selectElement');
             choose.addEventListener("click", () => {
-                if (choose.style.backgroundImage && selectElement.style.display) {
-                    choose.style.backgroundImage = "none";
-                    selectElement.style.display = "none";
-                } else {
+                choose.classList.toggle("active");
+                if (choose.classList.contains("active")) {
                     choose.style.backgroundImage = "linear-gradient(135deg, #55DDFF 0%, #C058F3 100%)";
                     selectElement.style.display = "flex";
+                } else {
+                    choose.style.backgroundImage = "none";
+                    selectElement.style.display = "none";
                 }
             });
 

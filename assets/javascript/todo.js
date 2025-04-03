@@ -90,7 +90,9 @@ input.addEventListener("keydown", function (event) {
                 se.removeChild(supp)
                 
             })
-            let active = true
+            
+            // Evenement click de Select 
+            let active = true //Sert a verifier et initialiser l'etat
 
             select.addEventListener('click', () => {
                 if(active){
@@ -107,6 +109,7 @@ input.addEventListener("keydown", function (event) {
                 active = !active
                  
                 })
+
             // Efface l'input après validation
             this.value = ""; // permet de vider l'input après chaque entrée
             check.style.backgroundImage = "none";

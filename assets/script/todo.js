@@ -2,39 +2,39 @@
 
 var mode = document.getElementById("mode");
 mode.addEventListener("click", () => {
-    // "classList" permet de manipuler les classes CSS d'un élément HTML 
+    // "classList" permet de manipuler les classes CSS d'un élément HTML
     // ".toogle" ajoute la classe si elle n'existe pas, supprime si elle est déjà presente
     document.body.classList.toggle("dark-theme");
     if (document.body.classList.contains("dark-theme")) {
         mode.src = "assets/img/dark-option.svg";
     } else {
-        mode.src = "assets/img/light-option.svg"
+        mode.src = "assets/img/light-option.svg";
     }
 });
 
 // Implementation de la touche "enter" pour valider l'entrée de l'utilisateur
 
 // Récupération des éléments HTML
-let input = document.getElementById('input');
-let parent = document.getElementById('addElement');
-let check = document.getElementById('check');
-let element = document.getElementById('element'); // Modèle de l'élément ajouté
-let category = document.getElementById('category'); // Appel de la div d'après
-let checkImage = document.getElementById('checkImage');
+let input = document.getElementById("input");
+let parent = document.getElementById("addElement");
+let check = document.getElementById("check");
+let element = document.getElementById("element"); // Modèle de l'élément ajouté
+let category = document.getElementById("category"); // Appel de la div d'après
+let checkImage = document.getElementById("checkImage");
 
 // Établit le compteur d'élément
 let count = 0; // compteur initialisé à 0
 const maxElement = 5; // nombre maximal d'élément que l'utilisateur peut introduire
 
 input.addEventListener("keydown", function (event) {
-
-    // Ajout du background à la div du "check" lorsque le quotta de caractères est atteint 
+    // Ajout du background à la div du "check" lorsque le quotta de caractères est atteint
 
     if (this.value.length < 4) {
-        check.style.backgroundImage = "none"; // le background est désactivé  
+        check.style.backgroundImage = "none"; // le background est désactivé
     } else {
         checkImage.style.display = "flex";
-        check.style.backgroundImage = "linear-gradient(135deg, #55DDFF 0%, #C058F3 100%)"; // le background est activé
+        check.style.backgroundImage =
+            "linear-gradient(135deg, #55DDFF 0%, #C058F3 100%)"; // le background est activé
     }
 
     // Ajoute la valeur de l'utilisateur
@@ -52,11 +52,10 @@ input.addEventListener("keydown", function (event) {
 
         // Vérifie si la longueur est suffisante
         if (this.value.length >= 5) {
-
             // clonage de l'élément à chaque entrée de l'utilisateur
             let newElement = element.cloneNode(true); // ".cloneNode(true)" permet de cloner l'element en question ainsi que ses enfants
             newElement.style.display = "flex"; // permet l'affichage de l'élément
-            let textElement = newElement.querySelector('#text');
+            let textElement = newElement.querySelector("#text");
 
             if (textElement) {
                 textElement.textContent = this.value;
@@ -68,26 +67,33 @@ input.addEventListener("keydown", function (event) {
 
             // Implémentation du select
             let choose = newElement.querySelector("#choose");
-            let selectElement = newElement.querySelector('#selectElement');
+            let selectElement = newElement.querySelector("#selectElement");
+            let textColor = getComputedStyle(
+                document.documentElement
+            ).getPropertyPriority("--text-items");
             choose.addEventListener("click", () => {
                 choose.classList.toggle("active");
                 if (choose.classList.contains("active")) {
-                    choose.style.backgroundImage = "linear-gradient(135deg, #55DDFF 0%, #C058F3 100%)";
+                    choose.style.backgroundImage =
+                        "linear-gradient(135deg, #55DDFF 0%, #C058F3 100%)";
                     selectElement.style.display = "flex";
+                    textElement.style.textDecoration = "line-through";
+                    textElement.style.color = "#9495A5";
                 } else {
                     choose.style.backgroundImage = "none";
                     selectElement.style.display = "none";
+                    textElement.style.textDecoration = "none";
+                    textElement.style.color = textColor;
                 }
             });
 
             checkImage.style.display = "none";
 
-
             // Implémentation du hover
             let sousElement = newElement.querySelector("#sousElement");
             let exit = document.createElement("img");
-            exit.src = "assets/img/exit-option.svg"
-            exit.id = "croix"
+            exit.src = "assets/img/exit-option.svg";
+            exit.id = "croix";
             exit.classList.add("cursor-pointer");
             newElement.addEventListener("mouseover", () => {
                 sousElement.appendChild(exit);
@@ -116,11 +122,8 @@ input.addEventListener("keydown", function (event) {
             check.disabled = true; // Empêche la validation
             checkImage.style.display = "none";
         }
-
     }
 });
-
-
 
 // Implémentation du select
 /* choose.addEventListener("click", () => {

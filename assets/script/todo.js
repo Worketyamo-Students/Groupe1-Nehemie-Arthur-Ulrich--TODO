@@ -1,7 +1,7 @@
 // Implementation du dark mode
 
 var mode = document.getElementById("mode");
-mode.onclick = function () {
+mode.addEventListener("click", () => {
     // "classList" permet de manipuler les classes CSS d'un élément HTML 
     // ".toogle" ajoute la classe si elle n'existe pas, supprime si elle est déjà presente
     document.body.classList.toggle("dark-theme");
@@ -10,7 +10,7 @@ mode.onclick = function () {
     } else {
         mode.src = "assets/img/light-option.svg"
     }
-}
+});
 
 // Implementation de la touche "enter" pour valider l'entrée de l'utilisateur
 
@@ -21,6 +21,7 @@ let check = document.getElementById('check');
 let element = document.getElementById('element'); // Modèle de l'élément ajouté
 let category = document.getElementById('category'); // Appel de la div d'après
 let checkImage = document.getElementById('checkImage');
+let choose = document.getElementById("choose");
 
 // Établit le compteur d'élément
 let count = 0; // compteur initialisé à 0
@@ -68,7 +69,7 @@ input.addEventListener("keydown", function (event) {
             checkImage.style.display = "none";
 
 
-            // Implémentation de hover
+            // Implémentation du hover
             let sousElement = newElement.querySelector("#sousElement");
             let exit = document.createElement("img");
             exit.src = "assets/img/exit-option.svg"
@@ -90,9 +91,6 @@ input.addEventListener("keydown", function (event) {
                 count--;
             });
 
-            let choose = document.getElementById("choose");
-            console.log(choose);
-
             // Efface l'input après validation
             this.value = ""; // permet de vider l'input après chaque entrée
             check.style.backgroundImage = "none";
@@ -106,3 +104,16 @@ input.addEventListener("keydown", function (event) {
         }
     }
 });
+
+// Implémentation du select
+choose.addEventListener("click", () => {
+    if(choose.classList.contains("actve")) {
+        choose.classList.remove("active");
+        choose.style.backgroundImage = "none";
+        checkImage.style.display = "none";
+    } else {
+        choose.classList.add("active");
+        choose.style.backgroundImage = "linear-gradient(135deg, #55DDFF 0%, #C058F3 100%)";
+        checkImage.style.display = "flex";
+    }
+}); 

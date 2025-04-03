@@ -21,7 +21,6 @@ let check = document.getElementById('check');
 let element = document.getElementById('element'); // Modèle de l'élément ajouté
 let category = document.getElementById('category'); // Appel de la div d'après
 let checkImage = document.getElementById('checkImage');
-let choose = document.getElementById("choose");
 
 // Établit le compteur d'élément
 let count = 0; // compteur initialisé à 0
@@ -66,6 +65,20 @@ input.addEventListener("keydown", function (event) {
 
             // Permet que chaque élément soit positionné avant la div "#category"
             parent.insertBefore(newElement, category);
+
+            // Implémentation du select
+            let choose = newElement.querySelector("#choose");
+            let selectElement = newElement.querySelector('#selectElement');
+            choose.addEventListener("click", () => {
+                if (choose.style.backgroundImage && selectElement.style.display) {
+                    choose.style.backgroundImage = "none";
+                    selectElement.style.display = "none";
+                } else {
+                    choose.style.backgroundImage = "linear-gradient(135deg, #55DDFF 0%, #C058F3 100%)";
+                    selectElement.style.display = "flex";
+                }
+            });
+
             checkImage.style.display = "none";
 
 
@@ -102,11 +115,14 @@ input.addEventListener("keydown", function (event) {
             check.disabled = true; // Empêche la validation
             checkImage.style.display = "none";
         }
+
     }
 });
 
+
+
 // Implémentation du select
-choose.addEventListener("click", () => {
+/* choose.addEventListener("click", () => {
     if(choose.classList.contains("actve")) {
         choose.classList.remove("active");
         choose.style.backgroundImage = "none";
@@ -116,4 +132,4 @@ choose.addEventListener("click", () => {
         choose.style.backgroundImage = "linear-gradient(135deg, #55DDFF 0%, #C058F3 100%)";
         checkImage.style.display = "flex";
     }
-}); 
+}); */

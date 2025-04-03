@@ -96,7 +96,8 @@ input.addEventListener("keydown", function (event) {
                 if(active){
                     select.style.background = "linear-gradient(135deg, #55DDFF 0%, #C058F3 100%)"
                     checkI.style.display = "flex"
-                    
+                    textElement.style.textDecoration = "line-through"
+                    textElement.style.color = "#9495A5"
                 } else{
                     select.style.background = ""
                     checkI.style.display = ""

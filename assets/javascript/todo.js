@@ -22,6 +22,8 @@ let element = document.getElementById('element'); // Modèle de l'élément ajou
 let category = document.getElementById('category'); // Appel de la div d'après
 let checkImage = document.getElementById('checkImage');
 
+let Tab1 = []
+
 // Établit le compteur d'élément
 let count = 0; // compteur initialisé à 0
 const maxElement = 5; // nombre maximal d'élément que l'utilisateur peut introduire
@@ -67,11 +69,15 @@ input.addEventListener("keydown", function (event) {
 
             //Ajout de l'icone Delete au Hover de la souris
             let se = newElement.querySelector("#sousElement")
+            
+            let select = se.querySelector("#select")
+            let checkI = se.querySelector("#checkImage2") //Evenement click du check
+
             let supp = document.createElement("img")
             supp.src = "assets/img/exit-option.svg"; supp.classList = "cursor-pointer"
+
             newElement.addEventListener('mouseover', () => {
                 se.appendChild(supp)
-                console.log(se)
 
                 //Suppression au click
                 supp.addEventListener('click', () =>{
@@ -84,7 +90,22 @@ input.addEventListener("keydown", function (event) {
                 se.removeChild(supp)
                 
             })
+            let active = true
 
+            select.addEventListener('click', () => {
+                if(active){
+                    select.style.background = "linear-gradient(135deg, #55DDFF 0%, #C058F3 100%)"
+                    checkI.style.display = "flex"
+                    
+                } else{
+                    select.style.background = ""
+                    checkI.style.display = ""
+                    textElement.style.textDecoration = ""
+                    textElement.style.color = ""
+                }
+                active = !active
+                 
+                })
             // Efface l'input après validation
             this.value = ""; // permet de vider l'input après chaque entrée
             check.style.backgroundImage = "none";
@@ -97,5 +118,7 @@ input.addEventListener("keydown", function (event) {
             alert("Enter enough characters");
             check.disabled = true; // Empêche la validation
         }
+        
+        
     }
-});
+})

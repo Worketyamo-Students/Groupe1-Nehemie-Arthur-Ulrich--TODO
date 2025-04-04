@@ -133,13 +133,13 @@ input.addEventListener("keydown", function (event) {
                 }
                 active = !active
                 
-                // completed1.addEventListener('click', () => { //evenement click du Active
-                //     parent.innerHTML = ""
-                //     for(let i=0; i<completed.length; i++){
-                //         parent.appendChild(completed[i])
-                //         // console.log(all)
-                //     }
-                // })
+                completed1.addEventListener('click', () => { //evenement click du Active
+                    parent.innerHTML = ""
+                    for(let i=0; i<completed.length; i++){
+                        parent.appendChild(completed[i])
+                        // console.log(all)
+                    }
+                })
             })
 
             all1.addEventListener('click', () => {

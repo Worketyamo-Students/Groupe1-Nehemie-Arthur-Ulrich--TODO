@@ -22,7 +22,7 @@ let element = document.getElementById('element'); // Modèle de l'élément ajou
 let category = document.getElementById('category'); // Appel de la div d'après
 let checkImage = document.getElementById('checkImage');
 
-let ALL = []//TABLEAU ALL
+let all = []//TABLEAU ALL
 
 // Établit le compteur d'élément
 let count = 0; // compteur initialisé à 0
@@ -54,13 +54,14 @@ input.addEventListener("keydown", function (event) {
         // Vérifie si la longueur est suffisante
         if (this.value.length >= 5) {
 
+            parent.style.display = 'flex'
             // clonage de l'élément à chaque entrée de l'utilisateur
             let newElement = element.cloneNode(true); // ".cloneNode(true)" permet de cloner l'element en question ainsi que ses enfants
             newElement.style.display = "flex"; // permet l'affichage de l'élément
             checkImage.style.display = "flex";
             let textElement = newElement.querySelector('#text');
 
-            let newTab1 = ALL.push(newElement) //TABLEAU D'ELEMENTS
+            let newAll = all.push(newElement) //TABLEAU D'ELEMENTS
             let nombreEl = document.getElementById("nombreEl")
             
             if (textElement) {
@@ -87,8 +88,8 @@ input.addEventListener("keydown", function (event) {
                 supp.addEventListener('click', () =>{
                     parent.removeChild(newElement)
                     count--
-                    ALL.pop()
-                    nombreEl.innerHTML = ALL.length + " items left"
+                    all = all.filter(all => all !== newElement)
+                    nombreEl.innerHTML = all.length + " items left"
                 }) 
             })
             //Retrait de l'icone delete quand on quitte le hover
@@ -116,11 +117,11 @@ input.addEventListener("keydown", function (event) {
                  
                 })
 
-            console.log(ALL)
-            nombreEl.innerHTML = ALL.length + " items left" //Decompte d'elements entrés    
+            // console.log(Tab1)
+            nombreEl.innerHTML = all.length + " items left" //Decompte d'elements entrés    
 
             // Efface l'input après validation
-            this.value = ""; // permet de vider l'input après chaque entrée
+            input.value = ""; // permet de vider l'input après chaque entrée
             check.style.backgroundImage = "none";
             checkImage.style.display = "none";
             count++; // Incrémentation du compteur à chaque entrée de l'utilisateur
@@ -131,7 +132,5 @@ input.addEventListener("keydown", function (event) {
             alert("Enter enough characters");
             check.disabled = true; // Empêche la validation
         }
-        
-        
     }
-})  
+})

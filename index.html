@@ -15,16 +15,16 @@
 
 <body class="relative font-[Josefin S ans] overflow-hidden w-[100vw] h-[100vh] bg-(--background-items)">
     <section
-        class="w-full h-[20rem] bg-[url(./assets/img/background-todo.svg)] object-cover px-[2.5rem] pt-[3.5rem] mb-[25rem] lg:h-[40%] lg:bg-no-repeat lg:px-[45rem] lg:pt-[3rem] lg:mb-[.1rem]">
-        <div class="flex flex-col gap-[3rem]">
-            <div class="flex justify-between items-center">
+        class="flex justify-center w-full h-[20rem] bg-[url(./assets/img/background-todo.svg)] object-cover pt-[3.5rem] mb-[25rem] lg:h-[40%] lg:bg-no-repeat lg:pt-[3rem] lg:mb-[.1rem]">
+        <div class="flex flex-col gap-[3rem] items-center w-[85vw] lg:w-[40vw]"> <!--Width changed-->
+            <div class="w-full flex justify-between items-center">
                 <h1 class="font-[700] text-[2.5rem] text-white lg:text-[4rem] tracking-[1rem]">
                     TODO
                 </h1>
                 <img src="./assets/img/light-option.svg" alt="option light"
                     class="lg:w-[2.6rem] lg:h-[2.6rem] cursor-pointer" id="mode" />
             </div>
-            <div class="flex flex-col gap-[2rem]">
+            <div class="flex flex-col gap-[2rem] items-center w-full">
                 <div
                     class="flex items-center gap-5 px-[2rem] py-[1rem] w-full h-[4.8rem] bg-(--background-items) rounded-[.5rem] blur-[.05rem] drop-shadow-lg lg:h-[6.4rem]">
                     <div class="flex items-center justify-center w-[2rem] h-[2rem] border border-[#c2c7c8] rounded-[50%] lg:w-[2.4rem] lg:h-[2.4rem] transition delay-200 duration-200 ease-in-out"
@@ -37,7 +37,7 @@
                 </div>
 
                 <section
-                    class="flex flex-col gap-[.2rem] pt-[1rem] bg-(--background-items) top-0 left-0 rounded-[1rem] blur-[.05rem] drop-shadow-2xl w-auto lg:gap-[.3rem]"
+                    class="w-full flex flex-col gap-[.2rem] pt-[1rem] bg-(--background-items) top-0 left-0 rounded-[1rem] blur-[.05rem] drop-shadow-2xl lg:gap-[.3rem]"
                     id="addElement">
                     <div class="hidden flex flex-col gap-[1.3rem] py-[1rem]" id="element">
                         <div class="flex justify-between items-center gap-5 px-[2.5rem]" id="sousElement">

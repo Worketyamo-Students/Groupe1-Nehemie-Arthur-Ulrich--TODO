@@ -22,7 +22,7 @@ let element = document.getElementById('element'); // Modèle de l'élément ajou
 let category = document.getElementById('category'); // Appel de la div d'après
 let checkImage = document.getElementById('checkImage');
 
-let Tab1 = []//TABLEAU ALL
+let ALL = []//TABLEAU ALL
 
 // Établit le compteur d'élément
 let count = 0; // compteur initialisé à 0
@@ -60,7 +60,7 @@ input.addEventListener("keydown", function (event) {
             checkImage.style.display = "flex";
             let textElement = newElement.querySelector('#text');
 
-            let newTab1 = Tab1.push(newElement) //TABLEAU D'ELEMENTS
+            let newTab1 = ALL.push(newElement) //TABLEAU D'ELEMENTS
             let nombreEl = document.getElementById("nombreEl")
             
             if (textElement) {
@@ -87,8 +87,8 @@ input.addEventListener("keydown", function (event) {
                 supp.addEventListener('click', () =>{
                     parent.removeChild(newElement)
                     count--
-                    Tab1.pop()
-                    nombreEl.innerHTML = Tab1.length + " items left"
+                    ALL.pop()
+                    nombreEl.innerHTML = ALL.length + " items left"
                 }) 
             })
             //Retrait de l'icone delete quand on quitte le hover
@@ -116,8 +116,8 @@ input.addEventListener("keydown", function (event) {
                  
                 })
 
-            console.log(Tab1)
-            nombreEl.innerHTML = Tab1.length + " items left" //Decompte d'elements entrés    
+            console.log(ALL)
+            nombreEl.innerHTML = ALL.length + " items left" //Decompte d'elements entrés    
 
             // Efface l'input après validation
             this.value = ""; // permet de vider l'input après chaque entrée
@@ -134,4 +134,4 @@ input.addEventListener("keydown", function (event) {
         
         
     }
-})
+})  

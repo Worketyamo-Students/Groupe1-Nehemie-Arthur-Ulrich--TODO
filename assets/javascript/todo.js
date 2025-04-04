@@ -86,8 +86,8 @@ input.addEventListener("keydown", function (event) {
                 supp.addEventListener('click', () =>{
                     parent.removeChild(newElement)
                     count--
-                    // Tab1.pop()
-                    // nombreEl.innerHTML = Tab1.length + " items left"
+                    Tab1.pop()
+                    nombreEl.innerHTML = Tab1.length + " items left"
                 }) 
             })
             //Retrait de l'icone delete quand on quitte le hover

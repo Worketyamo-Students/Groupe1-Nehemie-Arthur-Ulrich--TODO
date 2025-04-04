@@ -131,7 +131,5 @@ input.addEventListener("keydown", function (event) {
             alert("Enter enough characters");
             check.disabled = true; // Empêche la validation
         }
-        
-        
     }
 })

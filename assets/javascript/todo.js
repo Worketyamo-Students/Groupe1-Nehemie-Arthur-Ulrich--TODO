@@ -22,7 +22,7 @@ let element = document.getElementById('element'); // Modèle de l'élément ajou
 let category = document.getElementById('category'); // Appel de la div d'après
 let checkImage = document.getElementById('checkImage');
 
-let Tab1 = []
+let Tab1 = []//TABLEAU ALL
 
 // Établit le compteur d'élément
 let count = 0; // compteur initialisé à 0
@@ -34,6 +34,7 @@ input.addEventListener("keydown", function (event) {
 
     if (this.value.length < 4) {
         check.style.backgroundImage = "none"; // le background est désactivé  
+        checkImage.style.display = "none" //----off du checkImage
     } else {
         checkImage.style.display = "flex"; // Affiche l'image check
         check.style.backgroundImage = "linear-gradient(135deg, #55DDFF 0%, #C058F3 100%)"; // le background est activé
@@ -134,6 +135,3 @@ input.addEventListener("keydown", function (event) {
         
     }
 })
-console.log(Tab1)
-let nombreEl = document.getElementById("nombreEl")
-nombreEl.innerHTML = Tab1.length + " items left"

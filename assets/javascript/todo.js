@@ -21,8 +21,13 @@ let check = document.getElementById('check');
 let element = document.getElementById('element'); // Modèle de l'élément ajouté
 let category = document.getElementById('category'); // Appel de la div d'après
 let checkImage = document.getElementById('checkImage');
+let all1 = document.getElementById("all1"); let all2 = document.getElementById("all2")
+let activate1 = document.getElementById("activate1")
+let completed1 = document.getElementById("completed1")
 
 let all = []//TABLEAU ALL
+let activate = []//TABLEAU ACTIVE
+let completed = []//TABLEAU COMPLETED
 
 // Établit le compteur d'élément
 let count = 0; // compteur initialisé à 0
@@ -55,6 +60,7 @@ input.addEventListener("keydown", function (event) {
         if (this.value.length >= 5) {
 
             parent.style.display = 'flex'
+            category.style.display = 'flex'
             // clonage de l'élément à chaque entrée de l'utilisateur
             let newElement = element.cloneNode(true); // ".cloneNode(true)" permet de cloner l'element en question ainsi que ses enfants
             newElement.style.display = "flex"; // permet l'affichage de l'élément
@@ -70,7 +76,7 @@ input.addEventListener("keydown", function (event) {
             parent.appendChild(newElement); // Ajout de l'élément dans le DOM
 
             // Permet que chaque élément soit positionné avant la div "#category"
-            parent.insertBefore(newElement, category);
+            // parent.insertBefore(newElement, category);
 
             //Ajout de l'icone Delete au Hover de la souris
             let se = newElement.querySelector("#sousElement")
@@ -90,6 +96,8 @@ input.addEventListener("keydown", function (event) {
                     count--
                     all = all.filter(all => all !== newElement)
                     nombreEl.innerHTML = all.length + " items left"
+
+                    completed = completed.filter(completed => completed !== newElement)
                 }) 
             })
             //Retrait de l'icone delete quand on quitte le hover
@@ -107,15 +115,39 @@ input.addEventListener("keydown", function (event) {
                     checkI.style.display = "flex"
                     textElement.style.textDecoration = "line-through"
                     textElement.style.color = "#9495A5"
+                    
+                    let newcompleted = completed.push(newElement) //ADD ELMT TO COMPLETED
+
                 } else{
                     select.style.background = ""
                     checkI.style.display = ""
                     textElement.style.textDecoration = ""
                     textElement.style.color = ""
+
+                    completed = completed.filter(completed => completed !== newElement)
+
+                    //GERER LE TABLEAU ET LE CLICK ACTIVATE
+                    // let NewActivate = activate.push(newElement)
+                    // console.log(activate)
+
                 }
                 active = !active
-                 
-                })
+                
+                // completed1.addEventListener('click', () => { //evenement click du Active
+                //     parent.innerHTML = ""
+                //     for(let i=0; i<completed.length; i++){
+                //         parent.appendChild(completed[i])
+                //         // console.log(all)
+                //     }
+                // })
+            })
+
+            all1.addEventListener('click', () => {
+                parent.innerHTML = ""
+                for(let i=0; i<all.length; i++){
+                    parent.appendChild(all[i])
+                }
+            })
 
             // console.log(Tab1)
             nombreEl.innerHTML = all.length + " items left" //Decompte d'elements entrés    

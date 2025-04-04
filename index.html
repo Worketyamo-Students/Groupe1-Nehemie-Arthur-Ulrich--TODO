@@ -53,45 +53,46 @@
                         <div class="w-full h-[.03rem] bg-(--line-color)"></div>
                     </div>
 
-                    <div class="flex items-center justify-between px-[2.5rem] py-[1rem]" id="category">
-                        <p
-                            class="font-[400] text-[1.2rem] text-(--select-categories) hover:text-(--hover-select) cursor-pointer transition delay-200 duration-200 ease" id="nombreEl">
-                            0 items left
+                    
+                </section>
+                <div class="hidden w-full -mt-[2rem] flex items-center justify-between px-[2.5rem] py-[1rem] bg-(--background-items) rounded-[1rem] blur-[.05rem] drop-shadow-2xl lg:gap-[.3rem]" id="category">
+                    <p
+                        class="font-[400] text-[1.2rem] text-(--select-categories) hover:text-(--hover-select) cursor-pointer transition delay-200 duration-200 ease" id="nombreEl">
+                        0 items left
+                    </p>
+                    <div class="hidden lg:flex lg:items-center lg:justify-center lg:gap-5">
+                        <p class="font-[700] text-[1.4rem] text-[#3A7CFD] cursor-pointer" id="all1">
+                            All
                         </p>
-                        <div class="hidden lg:flex lg:items-center lg:justify-center lg:gap-5">
-                            <p class="font-[700] text-[1.4rem] text-[#3A7CFD] cursor-pointer">
-                                All
-                            </p>
-                            <p
-                                class="font-[700] text-[1.4rem] text-(--select-categories) hover:text-(--hover-select) cursor-pointer transition delay-200 duration-200 ease">
-                                Active
-                            </p>
-                            <p
-                                class="font-[700] text-[1.4rem] text-(--select-categories) hover:text-(--hover-select) cursor-pointer transition delay-200 duration-200 ease">
-                                Completed
-                            </p>
-                        </div>
                         <p
-                            class="font-[400] text-[1.2rem] text-(--select-categories) hover:text-(--hover-select) cursor-pointer transition delay-200 duration-200 ease">
-                            Clear Completed
+                            class="font-[700] text-[1.4rem] text-(--select-categories) hover:text-(--hover-select) cursor-pointer transition delay-200 duration-200 ease" id="activate1">
+                            Active
+                        </p>
+                        <p
+                            class="font-[700] text-[1.4rem] text-(--select-categories) hover:text-(--hover-select) cursor-pointer transition delay-200 duration-200 ease" id="completed1">
+                            Completed
                         </p>
                     </div>
-                </section>
+                    <p
+                        class="font-[400] text-[1.2rem] text-(--select-categories) hover:text-(--hover-select) cursor-pointer transition delay-200 duration-200 ease">
+                        Clear Completed
+                    </p>
+                </div>
             </div>
         </div>
     </section>
 
     <div
         class="flex items-center justify-center gap-9 py-[1rem] w-auto h-[4.8rem] rounded-[.5rem] blur-[.05rem] drop-shadow-lg mx-[2.5rem] mb-[5rem] mt-[36rem] bg-(--background-items) lg:hidden">
-        <h1 class="font-[700] text-[1.4rem] text-[#3A7CFD] cursor-pointer">
+        <h1 class="font-[700] text-[1.4rem] text-[#3A7CFD] cursor-pointer" id="all2">
             All
         </h1>
         <h1
-            class="font-[700] text-[1.4rem] text-(--select-categories) hover:text-(--hover-select) cursor-pointer transition delay-200 duration-200 ease">
+            class="font-[700] text-[1.4rem] text-(--select-categories) hover:text-(--hover-select) cursor-pointer transition delay-200 duration-200 ease" id="activate2">
             Active
         </h1>
         <h1
-            class="font-[700] text-[1.4rem] text-(--select-categories) hover:text-(--hover-select) cursor-pointer transition delay-200 duration-200 ease">
+            class="font-[700] text-[1.4rem] text-(--select-categories) hover:text-(--hover-select) cursor-pointer transition delay-200 duration-200 ease" id="completed2">
             Completed
         </h1>
     </div>

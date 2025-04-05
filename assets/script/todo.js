@@ -125,7 +125,7 @@ input.addEventListener("keydown", function (event) {
             // Par défaut, les élément entrés sont dans les tableaux "all" et "completed" car ils 
             // ne sont pas encore sélectionnés
             all.push(newElement);
-            completed.push(newElement);
+            active.push(newElement);
 
             choose.addEventListener("click", () => {
                 choose.classList.toggle("active");
@@ -139,8 +139,8 @@ input.addEventListener("keydown", function (event) {
                     // Vérifie si le "newElement" n'est pas encore dans le tableau "all" et "active" et l'ajoute. 
                     // Cela permet d'éviter des doublures
                     if(!all.includes(newElement)) all.push(newElement); // Ajout de l'élément dans le tableau "all"
-                    if(!active.includes(newElement)) active.push(newElement); // Ajout de l'élément dans le tableau "active"
-                    completed = completed.filter(element => element !== newElement); // suppression de l'élément dans le tableau "completed" car l'élément est déjà sélectionné
+                    if(!completed.includes(newElement)) completed.push(newElement); // Ajout de l'élément dans le tableau "completed"
+                    active = active.filter(element => element !== newElement); // suppression de l'élément dans le tableau "active" car l'élément est déjà sélectionné
                     counter(active);
                 } else {
                     choose.style.backgroundImage = "none";
@@ -148,8 +148,8 @@ input.addEventListener("keydown", function (event) {
                     textElement.style.textDecoration = "none";
                     textElement.style.color = textColor;
 
-                    active = active.filter(element=> element !== newElement); // Retrait de l'élément dans le tableau "active"
-                    if(!completed.includes(newElement)) completed.push(newElement); // Ajoute l'élément désélectionné dans le tableau "completed"
+                    completed = completed.filter(element=> element !== newElement); // Retrait de l'élément dans le tableau "completed"
+                    if(!active.includes(newElement)) active.push(newElement); // Ajoute l'élément désélectionné dans le tableau "active"
                     counter(completed); // Mise à jour du compteur
                 }
 
@@ -186,8 +186,8 @@ input.addEventListener("keydown", function (event) {
 
                 // Supression de l'élément dans les différents tableaux
                 all = all.filter(element => element !== newElement); // supprression de l'élément dans le tableau "all"
-                active = active.filter(element => element !== newElement); // suppression de l'élément dans le tableau "active"
-                completed = completed.filter(element => element !== newElement); // suppresion de l'élément dans le tableau "completed"
+                completed = completed.filter(element => element !== newElement); // suppression de l'élément dans le tableau "completed"
+                active = active.filter(element => element !== newElement); // suppresion de l'élément dans le tableau "active"
                 counter(active);
             });
 
@@ -216,17 +216,17 @@ all1.addEventListener("click", () => {
 all2.addEventListener("click", () => {
     afficherListe(all);
 }); 
-active1.addEventListener("click", () => {
-    afficherListe(active);
-}); 
-active2.addEventListener("click", () => {
-    afficherListe(active);
-}); 
 completed1.addEventListener("click", () => {
     afficherListe(completed);
 }); 
 completed2.addEventListener("click", () => {
     afficherListe(completed);
+}); 
+active1.addEventListener("click", () => {
+    afficherListe(active);
+}); 
+active2.addEventListener("click", () => {
+    afficherListe(active);
 }); 
 
 // Implémentation du clear completed

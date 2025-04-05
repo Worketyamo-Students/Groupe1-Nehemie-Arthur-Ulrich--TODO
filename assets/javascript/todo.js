@@ -24,6 +24,7 @@ let checkImage = document.getElementById('checkImage');
 let all1 = document.getElementById("all1"); let all2 = document.getElementById("all2")
 let activate1 = document.getElementById("activate1")
 let completed1 = document.getElementById("completed1")
+let clear = document.getElementById("clear")
 
 let all = []//TABLEAU ALL
 let activate = []//TABLEAU ACTIVE
@@ -98,6 +99,7 @@ input.addEventListener("keydown", function (event) {
                     nombreEl.innerHTML = all.length + " items left"
 
                     completed = completed.filter(completed => completed !== newElement)
+                    activate = activate.filter(activate => activate !== newElement)
                 }) 
             })
             //Retrait de l'icone delete quand on quitte le hover
@@ -117,6 +119,15 @@ input.addEventListener("keydown", function (event) {
                     textElement.style.color = "#9495A5"
                     
                     let newcompleted = completed.push(newElement) //ADD ELMT TO COMPLETED
+                    activate = all.filter(e => !completed.includes(e))
+
+                    // clear.addEventListener('click', () => { //DELETE WHEN WE CLICK ON CLEAR
+                    //     parent.removeChild(newElement)
+                    //     all = all.filter(all => all !== newElement)
+                    //     nombreEl.innerHTML = all.length + " items left"
+                    //     completed = completed.filter(completed => completed !== newElement)
+                    //     count = count - completed.length
+                    // })
 
                 } else{
                     select.style.background = ""
@@ -126,9 +137,7 @@ input.addEventListener("keydown", function (event) {
 
                     completed = completed.filter(completed => completed !== newElement)
 
-                    //GERER LE TABLEAU ET LE CLICK ACTIVATE
-                    // let NewActivate = activate.push(newElement)
-                    // console.log(activate)
+                    // activate = all.filter(e => !completed.includes(e))
 
                 }
                 active = !active
@@ -140,6 +149,12 @@ input.addEventListener("keydown", function (event) {
                         // console.log(all)
                     }
                 })
+                // activate1.addEventListener('click', () => {
+                //     parent.innerHTML = ""
+                //     for(let i=0; i < activate.length; i++)(
+                //         parent.appendChild(activate[i])
+                //     )
+                // })
             })
 
             all1.addEventListener('click', () => {
@@ -149,7 +164,6 @@ input.addEventListener("keydown", function (event) {
                 }
             })
 
-            // console.log(Tab1)
             nombreEl.innerHTML = all.length + " items left" //Decompte d'elements entrés    
 
             // Efface l'input après validation

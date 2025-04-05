@@ -46,7 +46,26 @@ let completed = []; // Tableau des éléments non séléctionnés
 function afficherListe(liste) {
     Tab.forEach(item => item.style.display = "none");
     liste.forEach(item => item.style.display = "flex");
-    liste.style.color= "#3A7CFD";
+
+    // État initial de couleur si ce n'est pas activé
+    let ensemble = [all1, all2, active1, active2, completed1, completed2];
+    ensemble.forEach(element => {
+        element.style.color = "var(--select-categories)"
+    })
+
+    // Application de la couleur active
+    if(liste === all) {
+        all1.style.color = "#3A7CFD";
+        all2.style.color = "#3A7CFD";
+    }
+    if(liste === active) {
+        active1.style.color = "#3A7CFD";
+        active2.style.color = "#3A7CFD";
+    }
+    if(liste === completed) {
+        completed1.style.color = "#3A7CFD";
+        completed2.style.color = "#3A7CFD";
+    }
 }
 
 // Établit le compteur d'élément
@@ -173,9 +192,9 @@ input.addEventListener("keydown", function (event) {
             parent.style.display = "flex";
             count++; // Incrémentation du compteur à chaque entrée de l'utilisateur
 
-            active.addEventListener("click", () => {
-                
-            });
+            // "all" activé par défaut
+            all1.style.color = "#3A7CFD";
+            all2.style.color = "#3A7CFD";
         } else {
             check.style.backgroundImage = "none";
             alert("Enter enough characters");

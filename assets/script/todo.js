@@ -30,7 +30,7 @@ let completed2 = document.getElementById('completed2');
 let clearCompleted = document.getElementById('clearCompleted'); // dé-sélection des éléments
 
 // Tableau de compte des éléments
-let Tab = [];
+let Tab = []; // cette tableau contient tous les éléments
 // Fonction d'affichage du compteur
 function counter() {
     let nombreItems = document.getElementById('nombreItems');
@@ -38,15 +38,18 @@ function counter() {
 }
 
 let all = []; // Tableau des tous les éléments
-let active = []; // Tableau des éléments sélectionnés
-let completed = []; // Tableau des éléments non séléctionnés
-    
+let active = []; // Tableau des éléments non sélectionnés
+let completed = []; // Tableau des éléments séléctionnés
+
+// Cette fonction permet d'afficher un tableau à la fois tout en masquant les autres
 function afficherListe(liste) {
-    Tab.forEach(item => item.style.display = "none");
+    // Masque tous les éléments de la table "Tab"
+    Tab.forEach(item => item.style.display = "none");  // "item" représente ici chaque élément qui passe dans la fonction
+    // On affiche unique les élément du tableau que l'on souhaite afficher ; les autres sont masqués
     liste.forEach(item => item.style.display = "flex");
 
     // État initial de couleur si ce n'est pas activé
-    let ensemble = [all1, all2, active1, active2, completed1, completed2];
+    let ensemble = [all1, all2, active1, active2, completed1, completed2]; // prend en compte tous les id dont la couleur change à l'état "active"
     ensemble.forEach(element => {
         element.style.color = "var(--select-categories)"
     });
@@ -73,8 +76,8 @@ let count = 0; // compteur initialisé à 0
 const maxElement = 5; // nombre maximal d'élément que l'utilisateur peut introduire
 
 input.addEventListener("keydown", function (event) {
-    // Ajout du background à la div du "check" lorsque le quotta de caractères est atteint
 
+    // Ajout du background à la div du "check" lorsque le quotta de caractères est atteint
     if (this.value.length < 4) {
         check.style.backgroundImage = "none"; // le background est désactivé
     } else {
@@ -84,7 +87,6 @@ input.addEventListener("keydown", function (event) {
     }
 
     // Ajoute la valeur de l'utilisateur
-
     if (event.key === "Enter") {
         let valeur = this.value; // affectation de l'entré de l'utilisateur à "valeur"
 
@@ -101,22 +103,24 @@ input.addEventListener("keydown", function (event) {
             // clonage de l'élément à chaque entrée de l'utilisateur
             let newElement = element.cloneNode(true); // ".cloneNode(true)" permet de cloner l'element en question ainsi que ses enfants
             newElement.style.display = "flex"; // permet l'affichage de l'élément
-            let textElement = newElement.querySelector("#text");
+            let textElement = newElement.querySelector("#text"); 
 
             if (textElement) {
-                textElement.textContent = this.value;
+                textElement.textContent = this.value; // affectation de la valeur entrée par l'utilisateur
             }
             parent.appendChild(newElement); // Ajout de l'élément dans le DOM
-
             // Permet que chaque élément soit positionné avant la div "#category"
             parent.insertBefore(newElement, category);
 
             // Implémentation du select
             let choose = newElement.querySelector("#choose");
             let selectElement = newElement.querySelector("#selectElement");
-            let textColor = getComputedStyle(
+            let textColor = getComputedStyle( // "getComputedStyle" permet d'obtenir la valeur calculée de toute les popriétés css d'un élément
                 document.documentElement
-            ).getPropertyPriority("--text-items"); // Récupération de la variable de la couleur du texte
+            ).getPropertyValue("--text-items"); // Récupération de la variable de la couleur du texte
+            // "getPropertyValue" retourne la valeur de la variable css (--text-items)
+
+// --------------------------------------------------------------------------------------------------------------------------------------
 
             // Par défaut, les élément entrés sont dans les tableaux "all" et "completed" car ils 
             // ne sont pas encore sélectionnés
@@ -137,6 +141,7 @@ input.addEventListener("keydown", function (event) {
                     if(!all.includes(newElement)) all.push(newElement); // Ajout de l'élément dans le tableau "all"
                     if(!active.includes(newElement)) active.push(newElement); // Ajout de l'élément dans le tableau "active"
                     completed = completed.filter(element => element !== newElement); // suppression de l'élément dans le tableau "completed" car l'élément est déjà sélectionné
+                    counter(active);
                 } else {
                     choose.style.backgroundImage = "none";
                     selectElement.style.display = "none";
@@ -145,9 +150,9 @@ input.addEventListener("keydown", function (event) {
 
                     active = active.filter(element=> element !== newElement); // Retrait de l'élément dans le tableau "active"
                     if(!completed.includes(newElement)) completed.push(newElement); // Ajoute l'élément désélectionné dans le tableau "completed"
+                    counter(completed); // Mise à jour du compteur
                 }
 
-                counter(all); // Mise à jour du compteur
             });
                         
             Tab.push(newElement);  // Ajoute l'élément dans le tableau
@@ -174,7 +179,7 @@ input.addEventListener("keydown", function (event) {
             // Suppression de l'élément
             exit.addEventListener("click", () => {
                 newElement.remove();
-                count--;
+                count--; // Le nombre délément possible à entrer est décrémenté
 
                 // Suppression de l'élément dans le compteur et sur l'affichage
                 Tab = Tab.filter(item => item !== newElement);
@@ -234,7 +239,7 @@ clearCompleted.addEventListener("click", () => {
     completed = [];
     // Réinitialisation du compteur
     count = 0;
-    counter(liste);
+    counter(all);
     parent.style.display = "none"; // Retrait du parent
 })
 

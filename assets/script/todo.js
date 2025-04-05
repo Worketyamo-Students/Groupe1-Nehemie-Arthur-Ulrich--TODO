@@ -151,12 +151,12 @@ input.addEventListener("keydown", function (event) {
 
                 // Suppression de l'élément dans le compteur et sur l'affichage
                 Tab = Tab.filter(item => item !== newElement);
-                counter();
-
+                
                 // Supression de l'élément dans les différents tableaux
-                all = all.filter(all => all !== newElement); // supprression de l'élément dans le tableau "all"
-                active = active.filter(active => active !== newElement); // suppression de l'élément dans le tableau "active"
-                completed = completed.filter(completed => completed !== newElement); // suppresion de l'élément dans le tableau "completed"
+                all = all.filter(element => element !== newElement); // supprression de l'élément dans le tableau "all"
+                active = active.filter(element => element !== newElement); // suppression de l'élément dans le tableau "active"
+                completed = completed.filter(element => element !== newElement); // suppresion de l'élément dans le tableau "completed"
+                counter();
             });
 
             // Efface l'input après validation

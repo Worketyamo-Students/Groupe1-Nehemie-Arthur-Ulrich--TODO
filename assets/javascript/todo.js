@@ -125,7 +125,7 @@ input.addEventListener("keydown", function (event) {
                         parent.removeChild(newElement)
                         all = all.filter(all => all !== newElement)
                         nombreEl.innerHTML = all.length + " items left"
-                        // completed = completed.filter(completed => completed !== newElement)
+                        completed = completed.filter(completed => completed !== newElement)
                         // count = count - completed.length
                     })
 

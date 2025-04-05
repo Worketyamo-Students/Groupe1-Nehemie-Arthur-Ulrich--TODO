@@ -120,8 +120,6 @@ input.addEventListener("keydown", function (event) {
             ).getPropertyValue("--text-items"); // Récupération de la variable de la couleur du texte
             // "getPropertyValue" retourne la valeur de la variable css (--text-items)
 
-// --------------------------------------------------------------------------------------------------------------------------------------
-
             // Par défaut, les élément entrés sont dans les tableaux "all" et "completed" car ils 
             // ne sont pas encore sélectionnés
             all.push(newElement);
@@ -152,7 +150,6 @@ input.addEventListener("keydown", function (event) {
                     if(!active.includes(newElement)) active.push(newElement); // Ajoute l'élément désélectionné dans le tableau "active"
                     counter(completed); // Mise à jour du compteur
                 }
-
             });
                         
             Tab.push(newElement);  // Ajoute l'élément dans le tableau
@@ -235,7 +232,6 @@ clearCompleted.addEventListener("click", () => {
     completed = [];
     count(completed);
 });
-
 
 /* // Implémentation du clear completed
 clearCompleted.addEventListener("click", () => {

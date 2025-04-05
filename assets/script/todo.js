@@ -41,9 +41,12 @@ let all = []; // Tableau des tous les éléments
 let active = []; // Tableau des éléments sélectionnés
 let completed = []; // Tableau des éléments non séléctionnés
 
+// #3A7CFD
+    
 function afficherListe(liste) {
     Tab.forEach(item => item.style.display = "none");
     liste.forEach(item => item.style.display = "flex");
+    liste.style.color= "#3A7CFD";
 }
 
 // Établit le compteur d'élément
@@ -201,4 +204,18 @@ completed1.addEventListener("click", () => {
 completed2.addEventListener("click", () => {
     afficherListe(completed);
 }); 
+
+// Implémentation du clear completed
+clearCompleted.addEventListener("click", () => {
+    Tab.forEach(element => element.remove()); // supprime tous les éléments
+    // Réinitialisation des tableaux
+    Tab = [];
+    all = [];
+    active = [];
+    completed = [];
+    // Réinitialisation du compteur
+    count = 0;
+    counter();
+    parent.style.display = "none"; // Retrait du parent
+})
 

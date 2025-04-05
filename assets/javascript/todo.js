@@ -149,12 +149,12 @@ input.addEventListener("keydown", function (event) {
                         // console.log(all)
                     }
                 })
-                // activate1.addEventListener('click', () => {
-                //     parent.innerHTML = ""
-                //     for(let i=0; i < activate.length; i++)(
-                //         parent.appendChild(activate[i])
-                //     )
-                // })
+                activate1.addEventListener('click', () => {
+                    parent.innerHTML = ""
+                    for(let i=0; i < activate.length; i++)(
+                        parent.appendChild(activate[i])
+                    )
+                })
             })
 
             all1.addEventListener('click', () => {

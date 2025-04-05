@@ -126,8 +126,12 @@ input.addEventListener("keydown", function (event) {
                         all = all.filter(all => all !== newElement)
                         nombreEl.innerHTML = all.length + " items left"
                         completed = completed.filter(completed => completed !== newElement)
-                        count = count - completed.length
+
                     })
+                    console.log(completed)
+                    count = count - completed.length
+                    count++
+
 
                 } else{ //SI LE CLICK N'EST PAS ACTIF
                     select.style.background = ""

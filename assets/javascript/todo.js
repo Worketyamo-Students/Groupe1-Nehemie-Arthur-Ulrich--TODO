@@ -157,7 +157,7 @@ input.addEventListener("keydown", function (event) {
                         parent.appendChild(completed[i])
                     }
                 })
-                completed2.addEventListener('click', () => { //evenement click du Active mobile
+                completed2.addEventListener('click', () => { //evenement click du Active
                     parent.innerHTML = ""
                     for(let i=0; i<completed.length; i++){
                         parent.appendChild(completed[i])
@@ -202,7 +202,7 @@ input.addEventListener("keydown", function (event) {
             check.style.backgroundImage = "none";
             checkImage.style.display = "none";
             alert("Enter enough characters");
-            // check.disabled = true; // Empêche la validation
+            check.disabled = true; // Empêche la validation
         }
     }
 })

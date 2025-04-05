@@ -121,13 +121,13 @@ input.addEventListener("keydown", function (event) {
                     let newcompleted = completed.push(newElement) //ADD ELMT TO COMPLETED
                     activate = all.filter(e => !completed.includes(e))
 
-                    // clear.addEventListener('click', () => { //DELETE WHEN WE CLICK ON CLEAR
-                    //     parent.removeChild(newElement)
-                    //     all = all.filter(all => all !== newElement)
-                    //     nombreEl.innerHTML = all.length + " items left"
-                    //     completed = completed.filter(completed => completed !== newElement)
-                    //     count = count - completed.length
-                    // })
+                    clear.addEventListener('click', () => { //DELETE WHEN WE CLICK ON CLEAR
+                        parent.removeChild(newElement)
+                        // all = all.filter(all => all !== newElement)
+                        // nombreEl.innerHTML = all.length + " items left"
+                        // completed = completed.filter(completed => completed !== newElement)
+                        // count = count - completed.length
+                    })
 
                 } else{
                     select.style.background = ""

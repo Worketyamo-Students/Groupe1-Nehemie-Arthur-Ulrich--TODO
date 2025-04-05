@@ -41,6 +41,11 @@ let all = []; // Tableau des tous les éléments
 let active = []; // Tableau des éléments sélectionnés
 let completed = []; // Tableau des éléments non séléctionnés
 
+function afficherListe(liste) {
+    Tab.forEach(item => item.style.display = "none");
+    liste.forEach(item => item.style.display = "flex");
+}
+
 // Établit le compteur d'élément
 let count = 0; // compteur initialisé à 0
 const maxElement = 5; // nombre maximal d'élément que l'utilisateur peut introduire

@@ -123,7 +123,8 @@ input.addEventListener("keydown", function (event) {
 
                     clear.addEventListener('click', () => { //DELETE WHEN WE CLICK ON CLEAR
                         parent.removeChild(newElement)
-                        all = all.filter(all => all !== newElement)
+                        // all = all.filter(all => all !== newElement)
+                        all = activate
                         nombreEl.innerHTML = all.length + " items left"
                         completed = completed.filter(completed => completed !== newElement)
 
@@ -143,6 +144,9 @@ input.addEventListener("keydown", function (event) {
 
                     activate = all.filter(e => !completed.includes(e))
 
+                    clear.addEventListener('click', () => {
+                        
+                    })
                 }
                 active = !active
                 

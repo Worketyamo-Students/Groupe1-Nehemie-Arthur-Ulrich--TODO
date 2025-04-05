@@ -27,6 +27,7 @@ let completed1 = document.getElementById('completed1');
 let all2 = document.getElementById('all2');
 let active2 = document.getElementById('active2');
 let completed2 = document.getElementById('completed2');
+let clearCompleted = document.getElementById('clearCompleted'); // dé-sélection des éléments
 
 // Tableau de compte des éléments
 let Tab = [];
@@ -38,7 +39,7 @@ function counter() {
 
 let all = []; // Tableau des tous les éléments
 let active = []; // Tableau des éléments sélectionnés
-let completed = []; // Tableau des élémentsnon séléctionnés
+let completed = []; // Tableau des éléments non séléctionnés
 
 // Établit le compteur d'élément
 let count = 0; // compteur initialisé à 0
@@ -89,6 +90,12 @@ input.addEventListener("keydown", function (event) {
             let textColor = getComputedStyle(
                 document.documentElement
             ).getPropertyPriority("--text-items"); // Récupération de la variable de la couleur du texte
+
+            // Par défaut, les élément entrés sont dans les tableaux "all" et "completed" car ils 
+            // ne sont pas encore sélectionnés
+            all.push(newElement);
+            completed.push(newElement);
+
             choose.addEventListener("click", () => {
                 choose.classList.toggle("active");
                 if (choose.classList.contains("active")) {
@@ -97,14 +104,23 @@ input.addEventListener("keydown", function (event) {
                     selectElement.style.display = "flex";
                     textElement.style.textDecoration = "line-through"; // Le texte devient barré
                     textElement.style.color = "#9495A5";
-                    // Tab.push(newElement);  // Ajoute l'élément dans le tableau
+
+                    // Vérifie si le "newElement" n'est pas encore dans le tableau "all" et "active" et l'ajoute. 
+                    // Cela permet d'éviter des doublures
+                    if(!all.includes(newElement)) all.push(newElement); // Ajout de l'élément dans le tableau "all"
+                    if(!active.includes(newElement)) active.push(newElement); // Ajout de l'élément dans le tableau "active"
+                    completed = completed.filter(element => element !== newElement); // suppression de l'élément dans le tableau "completed" car l'élément est déjà sélectionné
                 } else {
                     choose.style.backgroundImage = "none";
                     selectElement.style.display = "none";
                     textElement.style.textDecoration = "none";
                     textElement.style.color = textColor;
-                    // Tab = Tab.filter(item => item !== newElement);
+
+                    active = active.filter(element=> element !== newElement); // Retrait de l'élément dans le tableau "active"
+                    if(!completed.includes(newElement)) completed.push(newElement); // Ajoute l'élément désélectionné dans le tableau "completed"
                 }
+
+                counter(); // Mise à jour du compteur
             });
                         
             Tab.push(newElement);  // Ajoute l'élément dans le tableau
@@ -148,6 +164,10 @@ input.addEventListener("keydown", function (event) {
             check.style.backgroundImage = "none";
             parent.style.display = "flex";
             count++; // Incrémentation du compteur à chaque entrée de l'utilisateur
+
+            active.addEventListener("click", () => {
+                
+            });
         } else {
             check.style.backgroundImage = "none";
             alert("Enter enough characters");

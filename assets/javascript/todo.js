@@ -137,7 +137,7 @@ input.addEventListener("keydown", function (event) {
 
                     completed = completed.filter(completed => completed !== newElement)
 
-                    // activate = all.filter(e => !completed.includes(e))
+                    activate = all.filter(e => !completed.includes(e))
 
                 }
                 active = !active

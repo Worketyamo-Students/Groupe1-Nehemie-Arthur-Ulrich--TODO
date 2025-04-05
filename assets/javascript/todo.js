@@ -202,7 +202,7 @@ input.addEventListener("keydown", function (event) {
             check.style.backgroundImage = "none";
             checkImage.style.display = "none";
             alert("Enter enough characters");
-            check.disabled = true; // Empêche la validation
+            // check.disabled = true; // Empêche la validation
         }
     }
 })

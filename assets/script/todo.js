@@ -22,6 +22,12 @@ let element = document.getElementById("element"); // Modèle de l'élément ajou
 let category = document.getElementById("category"); // Appel de la div d'après
 let checkImage = document.getElementById("checkImage");
 
+let Tab = [];
+function counter() {
+    let nombreItems = document.getElementById('nombreItems');
+    nombreItems.innerHTML = Tab.length + "items left";
+}
+
 // Établit le compteur d'élément
 let count = 0; // compteur initialisé à 0
 const maxElement = 5; // nombre maximal d'élément que l'utilisateur peut introduire
@@ -79,13 +85,25 @@ input.addEventListener("keydown", function (event) {
                     selectElement.style.display = "flex";
                     textElement.style.textDecoration = "line-through";
                     textElement.style.color = "#9495A5";
+                    // Tab.push(newElement);  // Ajoute l'élément dans le tableau
+
                 } else {
                     choose.style.backgroundImage = "none";
                     selectElement.style.display = "none";
                     textElement.style.textDecoration = "none";
                     textElement.style.color = textColor;
+                    // Tab = Tab.filter(item => item !== newElement);
                 }
+
+               /* let newTab = Tab.push(newElement);
+                let nombreItems = getElementById(nombreItems);
+                nombreItems.innerHTML = Tab.length + "items left"; */
             });
+
+                            
+            Tab.push(newElement);  // Ajoute l'élément dans le tableau
+            counter();
+
 
             checkImage.style.display = "none";
 
@@ -109,6 +127,12 @@ input.addEventListener("keydown", function (event) {
             exit.addEventListener("click", () => {
                 newElement.remove();
                 count--;
+
+                Tab = Tab.filter(item => item !== newElement);
+                counter();
+
+                // Tab.filter();
+                // nombreItems.innerHTML = Tab.length + "items left";
             });
 
             // Efface l'input après validation

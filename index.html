@@ -15,16 +15,16 @@
 
 <body class="relative font-[Josefin S ans] overflow-hidden w-[100vw] h-[100vh] bg-(--background-items)">
     <section
-        class="w-full h-[20rem] bg-[url(assets/img/background-todo.svg)] object-cover px-[2.5rem] pt-[3.5rem] mb-[25rem] lg:h-[40%] lg:bg-no-repeat lg:px-[45rem] lg:pt-[3rem] lg:mb-[.1rem]">
-        <div class="flex flex-col gap-[3rem]">
-            <div class="flex justify-between items-center">
+        class="w-full h-[20rem] flex justify-center bg-[url(assets/img/background-todo.svg)] object-cover pt-[3.5rem] mb-[25rem] lg:h-[40%] lg:bg-no-repeat lg:pt-[3rem] lg:mb-[.1rem]">
+        <div class="flex flex-col items-center gap-[3rem] w-[85vw] lg:w-[40vw]">
+            <div class="w-full flex justify-between items-center">
                 <h1 class="font-[700] text-[2.5rem] text-white lg:text-[4rem] tracking-[1rem]">
                     TODO
                 </h1>
                 <img src="assets/img/light-option.svg" alt="option light"
                     class="lg:w-[2.6rem] lg:h-[2.6rem] cursor-pointer" id="mode" />
             </div>
-            <div class="flex flex-col gap-[2rem]">
+            <div class="flex flex-col gap-[2rem] items-center w-full">
                 <div
                     class="flex items-center gap-5 px-[2rem] py-[1rem] w-full h-[4.8rem] bg-(--background-items) rounded-[.5rem] blur-[.05rem] drop-shadow-lg lg:h-[6.4rem]">
                     <div class="flex items-center justify-center w-[2rem] h-[2rem] border border-[#c2c7c8] rounded-[50%] lg:w-[2.4rem] lg:h-[2.4rem] transition delay-200 duration-200 ease-in-out"
@@ -37,7 +37,7 @@
                 </div>
 
                 <section
-                    class="hidden flex flex-col gap-[1rem] lg:gap-[.2rem] pt-[1rem] bg-(--background-items) top-0 left-0 rounded-[1rem] blur-[.05rem] drop-shadow-2xl w-auto h-[50vh] lg:h-[55vh] lg:gap-[.3rem]"
+                    class="w-full hidden flex flex-col gap-[1rem] lg:gap-[.2rem] pt-[1rem] bg-(--background-items) top-0 left-0 rounded-[1rem] blur-[.05rem] drop-shadow-2xl lg:gap-[.3rem]"
                     id="addElement">
                     <div class="hidden flex flex-col gap-[1.3rem] py-[1rem]" id="element">
                         <div class="flex justify-between items-center gap-5 px-[2.5rem]" id="sousElement">
@@ -46,7 +46,7 @@
                                     id="choose">
                                     <img src="assets/img/check.svg" alt="" class="hidden" id="selectElement" />
                                 </div>
-                                <p class="font-[400] text-[1.2rem] text-(--text-items)" id="text"></p>
+                                <p class="font-[400] lg:text-[1.2rem] text-[1.2rem] text-(--text-items)" id="text"></p>
                             </div>
                             <!-- <p class="font-[400] text-[1.2rem] text-(--text-items)" id="text"> -->
 
@@ -58,8 +58,9 @@
 
                     <div class="flex items-center justify-between px-[2.5rem] py-[1rem]" id="category">
                         <p
-                            class="font-[400] text-[1.2rem] text-(--select-categories) hover:text-(--hover-select) cursor-pointer transition delay-200 duration-200 ease">
-                            5 items left
+                            class="font-[400] text-[1.2rem] text-(--select-categories) hover:text-(--hover-select) cursor-pointer transition delay-200 duration-200 ease"
+                            id="nombreItems">
+                            0 items left
                         </p>
                         <div class="hidden lg:flex lg:items-center lg:justify-center lg:gap-5">
                             <p class="font-[700] text-[1.4rem] text-[#3A7CFD] cursor-pointer">
@@ -99,7 +100,7 @@
         </h1>
     </div>
 
-    <h1 class="lg:absolute lg:bottom-[-6rem] lg:left-[60rem] font-[400] text-[1.4rem] text-(--select-categories) text-center mb-[5rem] lg:mb-[8rem]"
+    <h1 class="lg:absolute w-full text-center lg:bottom-[-6rem] font-[400] text-[1.4rem] text-(--select-categories) mb-[5rem] lg:mb-[8rem]"
         id="test">
         Drag and drop to reorder list
     </h1>

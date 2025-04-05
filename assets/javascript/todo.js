@@ -148,12 +148,12 @@ input.addEventListener("keydown", function (event) {
                         parent.appendChild(completed[i])
                     }
                 })
-                // completed2.addEventListener('click', () => { //evenement click du Active
-                //     parent.innerHTML = ""
-                //     for(let i=0; i<completed.length; i++){
-                //         parent.appendChild(completed[i])
-                //     }
-                // })
+                completed2.addEventListener('click', () => { //evenement click du Active
+                    parent.innerHTML = ""
+                    for(let i=0; i<completed.length; i++){
+                        parent.appendChild(completed[i])
+                    }
+                })
                 activate1.addEventListener('click', () => {
                     parent.innerHTML = ""
                     for(let i=0; i < activate.length; i++)(

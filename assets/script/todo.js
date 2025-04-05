@@ -231,6 +231,14 @@ active2.addEventListener("click", () => {
 
 // Implémentation du clear completed
 clearCompleted.addEventListener("click", () => {
+    completed.forEach(element => element.remove());
+    completed = [];
+    count(completed);
+});
+
+
+/* // Implémentation du clear completed
+clearCompleted.addEventListener("click", () => {
     Tab.forEach(element => element.remove()); // supprime tous les éléments
     // Réinitialisation des tableaux
     Tab = [];
@@ -241,5 +249,5 @@ clearCompleted.addEventListener("click", () => {
     count = 0;
     counter(all);
     parent.style.display = "none"; // Retrait du parent
-})
+}) */
 

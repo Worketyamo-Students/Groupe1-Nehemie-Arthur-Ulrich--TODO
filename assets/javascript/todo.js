@@ -123,8 +123,8 @@ input.addEventListener("keydown", function (event) {
 
                     clear.addEventListener('click', () => { //DELETE WHEN WE CLICK ON CLEAR
                         parent.removeChild(newElement)
-                        // all = all.filter(all => all !== newElement)
-                        // nombreEl.innerHTML = all.length + " items left"
+                        all = all.filter(all => all !== newElement)
+                        nombreEl.innerHTML = all.length + " items left"
                         // completed = completed.filter(completed => completed !== newElement)
                         // count = count - completed.length
                     })

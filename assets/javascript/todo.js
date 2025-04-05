@@ -52,7 +52,7 @@ input.addEventListener("keydown", function (event) {
         let valeur = this.value; // affectation de l'entré de l'utilisateur à "valeur"
 
         // Condition d'arret si le nombre d'éléments entré est égal à 5
-        if (count >= maxElement) {
+        if (count >= 5) {
             alert("You can only add 5 items.");
             return; // Le "return" empeche l'execution du reste du code si la condition est vérifiée
         }
@@ -94,12 +94,13 @@ input.addEventListener("keydown", function (event) {
                 //Suppression au click
                 supp.addEventListener('click', () =>{
                     parent.removeChild(newElement)
-                    count--
                     all = all.filter(all => all !== newElement)
                     nombreEl.innerHTML = all.length + " items left"
 
                     completed = completed.filter(completed => completed !== newElement)
                     activate = activate.filter(activate => activate !== newElement)
+                    count--
+
                 }) 
             })
             //Retrait de l'icone delete quand on quitte le hover
@@ -125,11 +126,11 @@ input.addEventListener("keydown", function (event) {
                         parent.removeChild(newElement)
                         // all = all.filter(all => all !== newElement)
                         all = activate
+                        
                         nombreEl.innerHTML = all.length + " items left"
                         completed = completed.filter(completed => completed !== newElement)
 
-                    })
-                    console.log(completed)
+                    }) 
                     count = count - completed.length
                     count++
 

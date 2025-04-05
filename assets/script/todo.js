@@ -21,12 +21,24 @@ let check = document.getElementById("check");
 let element = document.getElementById("element"); // Modèle de l'élément ajouté
 let category = document.getElementById("category"); // Appel de la div d'après
 let checkImage = document.getElementById("checkImage");
+let all1 = document.getElementById('all1');
+let active1 = document.getElementById('active1');
+let completed1 = document.getElementById('completed1');
+let all2 = document.getElementById('all2');
+let active2 = document.getElementById('active2');
+let completed2 = document.getElementById('completed2');
 
+// Tableau de compte des éléments
 let Tab = [];
+// Fonction d'affichage du compteur
 function counter() {
     let nombreItems = document.getElementById('nombreItems');
-    nombreItems.innerHTML = Tab.length + "items left";
+    nombreItems.innerHTML = Tab.length + " items left";
 }
+
+let all = []; // Tableau des tous les éléments
+let active = []; // Tableau des éléments sélectionnés
+let completed = []; // Tableau des élémentsnon séléctionnés
 
 // Établit le compteur d'élément
 let count = 0; // compteur initialisé à 0
@@ -76,17 +88,16 @@ input.addEventListener("keydown", function (event) {
             let selectElement = newElement.querySelector("#selectElement");
             let textColor = getComputedStyle(
                 document.documentElement
-            ).getPropertyPriority("--text-items");
+            ).getPropertyPriority("--text-items"); // Récupération de la variable de la couleur du texte
             choose.addEventListener("click", () => {
                 choose.classList.toggle("active");
                 if (choose.classList.contains("active")) {
                     choose.style.backgroundImage =
                         "linear-gradient(135deg, #55DDFF 0%, #C058F3 100%)";
                     selectElement.style.display = "flex";
-                    textElement.style.textDecoration = "line-through";
+                    textElement.style.textDecoration = "line-through"; // Le texte devient barré
                     textElement.style.color = "#9495A5";
                     // Tab.push(newElement);  // Ajoute l'élément dans le tableau
-
                 } else {
                     choose.style.backgroundImage = "none";
                     selectElement.style.display = "none";
@@ -94,16 +105,10 @@ input.addEventListener("keydown", function (event) {
                     textElement.style.color = textColor;
                     // Tab = Tab.filter(item => item !== newElement);
                 }
-
-               /* let newTab = Tab.push(newElement);
-                let nombreItems = getElementById(nombreItems);
-                nombreItems.innerHTML = Tab.length + "items left"; */
             });
-
-                            
+                        
             Tab.push(newElement);  // Ajoute l'élément dans le tableau
-            counter();
-
+            counter(); // Appel de la fonction d'affichage du compteur
 
             checkImage.style.display = "none";
 
@@ -128,6 +133,7 @@ input.addEventListener("keydown", function (event) {
                 newElement.remove();
                 count--;
 
+                // Suppression de l'élément dans le compteur et sur l'affichage
                 Tab = Tab.filter(item => item !== newElement);
                 counter();
 
@@ -148,16 +154,3 @@ input.addEventListener("keydown", function (event) {
         }
     }
 });
-
-// Implémentation du select
-/* choose.addEventListener("click", () => {
-    if(choose.classList.contains("actve")) {
-        choose.classList.remove("active");
-        choose.style.backgroundImage = "none";
-        checkImage.style.display = "none";
-    } else {
-        choose.classList.add("active");
-        choose.style.backgroundImage = "linear-gradient(135deg, #55DDFF 0%, #C058F3 100%)";
-        checkImage.style.display = "flex";
-    }
-}); */

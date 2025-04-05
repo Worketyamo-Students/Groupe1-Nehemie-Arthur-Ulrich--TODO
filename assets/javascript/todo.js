@@ -22,8 +22,8 @@ let element = document.getElementById('element'); // Modèle de l'élément ajou
 let category = document.getElementById('category'); // Appel de la div d'après
 let checkImage = document.getElementById('checkImage');
 let all1 = document.getElementById("all1"); let all2 = document.getElementById("all2")
-let activate1 = document.getElementById("activate1")
-let completed1 = document.getElementById("completed1")
+let activate1 = document.getElementById("activate1"); let activate2 = document.getElementById("activate2")
+let completed1 = document.getElementById("completed1"); let completed2 = document.getElementById("completed2")
 let clear = document.getElementById("clear")
 
 let all = []//TABLEAU ALL
@@ -129,7 +129,7 @@ input.addEventListener("keydown", function (event) {
                         count = count - completed.length
                     })
 
-                } else{
+                } else{ //SI LE CLICK N'EST PAS ACTIF
                     select.style.background = ""
                     checkI.style.display = ""
                     textElement.style.textDecoration = ""
@@ -146,18 +146,35 @@ input.addEventListener("keydown", function (event) {
                     parent.innerHTML = ""
                     for(let i=0; i<completed.length; i++){
                         parent.appendChild(completed[i])
-                        // console.log(all)
                     }
                 })
+                // completed2.addEventListener('click', () => { //evenement click du Active
+                //     parent.innerHTML = ""
+                //     for(let i=0; i<completed.length; i++){
+                //         parent.appendChild(completed[i])
+                //     }
+                // })
                 activate1.addEventListener('click', () => {
                     parent.innerHTML = ""
                     for(let i=0; i < activate.length; i++)(
                         parent.appendChild(activate[i])
                     )
                 })
+                // activate2.addEventListener('click', () => {
+                //     parent.innerHTML = ""
+                //     for(let i=0; i < activate.length; i++)(
+                //         parent.appendChild(activate[i])
+                //     )
+                // })
             })
 
             all1.addEventListener('click', () => {
+                parent.innerHTML = ""
+                for(let i=0; i<all.length; i++){
+                    parent.appendChild(all[i])
+                }
+            })
+            all2.addEventListener('click', () => {
                 parent.innerHTML = ""
                 for(let i=0; i<all.length; i++){
                     parent.appendChild(all[i])

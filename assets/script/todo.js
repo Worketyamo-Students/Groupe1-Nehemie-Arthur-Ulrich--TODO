@@ -151,7 +151,7 @@ input.addEventListener("keydown", function (event) {
 
                 // Suppression de l'élément dans le compteur et sur l'affichage
                 Tab = Tab.filter(item => item !== newElement);
-                
+
                 // Supression de l'élément dans les différents tableaux
                 all = all.filter(element => element !== newElement); // supprression de l'élément dans le tableau "all"
                 active = active.filter(element => element !== newElement); // suppression de l'élément dans le tableau "active"
@@ -176,3 +176,24 @@ input.addEventListener("keydown", function (event) {
         }
     }
 });
+
+// Affichage des listes lors des différents click
+all1.addEventListener("click", () => {
+    afficherListe(all);
+}); 
+all2.addEventListener("click", () => {
+    afficherListe(all);
+}); 
+active1.addEventListener("click", () => {
+    afficherListe(active);
+}); 
+active2.addEventListener("click", () => {
+    afficherListe(active);
+}); 
+completed1.addEventListener("click", () => {
+    afficherListe(completed);
+}); 
+completed2.addEventListener("click", () => {
+    afficherListe(completed);
+}); 
+

@@ -137,8 +137,10 @@ input.addEventListener("keydown", function (event) {
                 Tab = Tab.filter(item => item !== newElement);
                 counter();
 
-                // Tab.filter();
-                // nombreItems.innerHTML = Tab.length + "items left";
+                // Supression de l'élément dans les différents tableaux
+                all = all.filter(all => all !== newElement); // supprression de l'élément dans le tableau "all"
+                active = active.filter(active => active !== newElement); // suppression de l'élément dans le tableau "active"
+                completed = completed.filter(completed => completed !== newElement); // suppresion de l'élément dans le tableau "completed"
             });
 
             // Efface l'input après validation

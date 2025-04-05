@@ -34,14 +34,12 @@ let Tab = [];
 // Fonction d'affichage du compteur
 function counter() {
     let nombreItems = document.getElementById('nombreItems');
-    nombreItems.innerHTML = Tab.length + " items left";
+    nombreItems.innerHTML = Tab.length + " items left"; // Mise à jour de la fonction counter en fonction de tous les tableaux
 }
 
 let all = []; // Tableau des tous les éléments
 let active = []; // Tableau des éléments sélectionnés
 let completed = []; // Tableau des éléments non séléctionnés
-
-// #3A7CFD
     
 function afficherListe(liste) {
     Tab.forEach(item => item.style.display = "none");
@@ -51,7 +49,7 @@ function afficherListe(liste) {
     let ensemble = [all1, all2, active1, active2, completed1, completed2];
     ensemble.forEach(element => {
         element.style.color = "var(--select-categories)"
-    })
+    });
 
     // Application de la couleur active
     if(liste === all) {
@@ -66,6 +64,8 @@ function afficherListe(liste) {
         completed1.style.color = "#3A7CFD";
         completed2.style.color = "#3A7CFD";
     }
+
+    counter(liste); // Mise à jour du compteur pour le tableau actuel
 }
 
 // Établit le compteur d'élément
@@ -147,11 +147,11 @@ input.addEventListener("keydown", function (event) {
                     if(!completed.includes(newElement)) completed.push(newElement); // Ajoute l'élément désélectionné dans le tableau "completed"
                 }
 
-                counter(); // Mise à jour du compteur
+                counter(all); // Mise à jour du compteur
             });
                         
             Tab.push(newElement);  // Ajoute l'élément dans le tableau
-            counter(); // Appel de la fonction d'affichage du compteur
+            counter(all); // Appel de la fonction d'affichage du compteur
 
             checkImage.style.display = "none";
 
@@ -183,7 +183,7 @@ input.addEventListener("keydown", function (event) {
                 all = all.filter(element => element !== newElement); // supprression de l'élément dans le tableau "all"
                 active = active.filter(element => element !== newElement); // suppression de l'élément dans le tableau "active"
                 completed = completed.filter(element => element !== newElement); // suppresion de l'élément dans le tableau "completed"
-                counter();
+                counter(active);
             });
 
             // Efface l'input après validation
@@ -234,7 +234,7 @@ clearCompleted.addEventListener("click", () => {
     completed = [];
     // Réinitialisation du compteur
     count = 0;
-    counter();
+    counter(liste);
     parent.style.display = "none"; // Retrait du parent
 })
 

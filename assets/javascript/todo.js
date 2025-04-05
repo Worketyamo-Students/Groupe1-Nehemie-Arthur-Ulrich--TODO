@@ -192,7 +192,7 @@ input.addEventListener("keydown", function (event) {
 
             nombreEl.innerHTML = all.length + " items left" //Decompte d'elements entrés    
 
-            // Efface l'input après validation
+            //Efface l'input après validation
             input.value = ""; // permet de vider l'input après chaque entrée
             check.style.backgroundImage = "none";
             checkImage.style.display = "none";

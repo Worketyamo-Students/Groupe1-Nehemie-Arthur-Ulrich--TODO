@@ -1,17 +1,20 @@
 
 # Fonctionalites
-Il s'agit d'un projet de groupe qui consiste à créer une liste de sélection autonome et fonctionnelle, basée sur du code HTML, CSS et JS.
-  # TODO LIST 📝  
- un exemple de portfolio 
+Il s'agit d'un projet de groupe qui consiste à créer une liste de sélection autonome et fonctionnelle, basée sur du code HTML, CSS et JS. L'utilisateur doit etre capable d'ajouter des éléments ; les supprimer ; les sélectionner. Tout cela organser sur trois parametres à savoir : all, active et completed. Lui permettant de mieux visualiser l'organisation de ses éléments.
+
+# TODO LIST 📝  
+ Un exemple de taches à faire conçu sous forme de liste structurée.
 
 ## Technologies🚀  
-  * Html
-* tailwind css
-* Javascript
+* HTML
+* CSS
+* TAILWIND CSS
+* JAVASCRIPT
   
 ## Installation ✨ 
-https://github.com/UlrichDevp/Projet-TODO.githttps://github.com/UlrichDevp/Projet-TODO.git
+https://worketyamo-students.github.io/Groupe1-Nehemie-Arthur-Ulrich--TODO/
 
 ## Contibuteurs
   @UlrichDevp
- 
+  @Nehemie-Jacques
+  @Arthur

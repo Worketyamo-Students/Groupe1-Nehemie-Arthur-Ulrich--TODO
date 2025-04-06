@@ -77,6 +77,10 @@ input.addEventListener("keydown", function (event) {
             parent.appendChild(newElement); // Ajout de l'élément dans le DOM
 
             // Permet que chaque élément soit positionné avant la div "#category"
+            parent.insertBefore(newElement, category);
+
+
+            // Permet que chaque élément soit positionné avant la div "#category"
             // parent.insertBefore(newElement, category);
 
             //Ajout de l'icone Delete au Hover de la souris

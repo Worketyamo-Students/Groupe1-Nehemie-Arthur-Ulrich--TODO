@@ -1,15 +1,3 @@
-// Enregistrement du mode
-window.addEventListener("DOMContentLoaded", () => {  // "window" représente la fenetre du navigateur;  "DOMContentLoaded" permet d'exécuter le code seulement après le charchement du HTML
-    const saveTheme = localStorage.getItem("theme"); // "localStorage" zone de stockage du navigateur ou on peut enregster des données persistentes
-    if(saveTheme === "dark") {                       // "getItem" Récupère une valeur enregistrée dans le localStorage.    
-        document.classList.add("dark-theme");
-        mode.src = "assets/img/dark-option.svg";
-    } else {
-        document.classList.add("dark-theme");
-        mode.src = "assets/img/light-option.svg";
-    }
-});
-
 // Implementation du dark mode
 
 var mode = document.getElementById("mode");
@@ -25,6 +13,28 @@ mode.addEventListener("click", () => {
         localStorage.setItem("theme", "light");
     }
 });
+
+// Enregistrement du mode
+window.addEventListener("DOMContentLoaded", () => {  // "window" représente la fenetre du navigateur;  "DOMContentLoaded" permet d'exécuter le code seulement après le charchement du HTML
+    const saveTheme = localStorage.getItem("theme"); // "localStorage" zone de stockage du navigateur ou on peut enregster des données persistentes
+    if(saveTheme === "dark") {                       // "getItem" Récupère une valeur enregistrée dans le localStorage.    
+        document.body.classList.add("dark-theme");
+        mode.src = "assets/img/dark-option.svg";
+    } else if(saveTheme === "light") {
+        document.body.classList.add("dark-theme");
+        mode.src = "assets/img/light-option.svg";
+    }
+});
+
+// Détection du theme de la machine
+const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+if (!localStorage.getItem("theme")) {
+    if (prefersDark) {
+        document.body.classList.add("dark-theme");
+        mode.src = "assets/img/dark-option.svg";
+    }
+}
+
 
 // Implementation de la touche "enter" pour valider l'entrée de l'utilisateur
 

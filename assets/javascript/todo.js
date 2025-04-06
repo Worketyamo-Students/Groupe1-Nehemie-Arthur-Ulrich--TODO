@@ -52,7 +52,7 @@ input.addEventListener("keydown", function (event) {
         let valeur = this.value; // affectation de l'entré de l'utilisateur à "valeur"
 
         // Condition d'arret si le nombre d'éléments entré est égal à 5
-        if (count >= 5) {
+        if (all.length >= 5) {
             alert("You can only add 5 items.");
             return; // Le "return" empeche l'execution du reste du code si la condition est vérifiée
         }
@@ -130,9 +130,10 @@ input.addEventListener("keydown", function (event) {
                         nombreEl.innerHTML = all.length + " items left"
                         completed = completed.filter(completed => completed !== newElement)
 
+                    //     count = count - completed.length
+                    // count++
                     }) 
-                    count = count - completed.length
-                    count++
+                    
 
 
                 } else{ //SI LE CLICK N'EST PAS ACTIF

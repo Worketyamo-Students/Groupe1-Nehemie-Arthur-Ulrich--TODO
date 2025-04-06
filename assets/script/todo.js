@@ -1,3 +1,8 @@
+if(localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-theme");
+    mode.src = "assets/img/light-option.svg";
+}
+
 // Implementation du dark mode
 
 var mode = document.getElementById("mode");

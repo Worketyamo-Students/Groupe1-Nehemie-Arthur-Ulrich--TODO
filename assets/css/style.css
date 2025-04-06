@@ -17,3 +17,7 @@
   --hover-select: #E3E4F1;
   --select-categories: #5B5E7E;
 }
+
+body {
+  transition: background-color 1s ease-in-out, color 1s ease-in-out;
+}

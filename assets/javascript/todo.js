@@ -153,24 +153,28 @@ input.addEventListener("keydown", function (event) {
                 
                 completed1.addEventListener('click', () => { //evenement click du Active
                     parent.innerHTML = ""
+                    all1.style.color = "var(--select-categories)"; all2.style.color = "var(--select-categories)"; activate1.style.color = "var(--select-categories)"; activate2.style.color = "var(--select-categories)", completed1.style.color = "#3A7CFD"; completed2.style.color = "#3A7CFD";
                     for(let i=0; i<completed.length; i++){
                         parent.appendChild(completed[i])
                     }
                 })
                 completed2.addEventListener('click', () => { //evenement click du Active
                     parent.innerHTML = ""
+                    all1.style.color = "var(--select-categories)"; all2.style.color = "var(--select-categories)"; activate1.style.color = "var(--select-categories)"; activate2.style.color = "var(--select-categories)", completed1.style.color = "#3A7CFD"; completed2.style.color = "#3A7CFD";
                     for(let i=0; i<completed.length; i++){
                         parent.appendChild(completed[i])
                     }
                 })
                 activate1.addEventListener('click', () => {
                     parent.innerHTML = ""
+                    all1.style.color = "var(--select-categories)"; all2.style.color = "var(--select-categories)"; activate1.style.color = "#3A7CFD"; activate2.style.color = "#3A7CFD", completed1.style.color = "var(--select-categories)"; completed2.style.color = "var(--select-categories)";
                     for(let i=0; i < activate.length; i++)(
                         parent.appendChild(activate[i])
                     )
                 })
                 activate2.addEventListener('click', () => {
                     parent.innerHTML = ""
+                    all1.style.color = "var(--select-categories)"; all2.style.color = "var(--select-categories)"; activate1.style.color = "#3A7CFD"; activate2.style.color = "#3A7CFD", completed1.style.color = "var(--select-categories)"; completed2.style.color = "var(--select-categories)";
                     for(let i=0; i < activate.length; i++)(
                         parent.appendChild(activate[i])
                     )
@@ -179,12 +183,14 @@ input.addEventListener("keydown", function (event) {
 
             all1.addEventListener('click', () => {
                 parent.innerHTML = ""
+                 all1.style.color = "#3A7CFD"; all2.style.color = "#3A7CFD"; activate1.style.color = "var(--select-categories)"; activate2.style.color = "var(--select-categories)", completed1.style.color = "var(--select-categories)"; completed2.style.color = "var(--select-categories)";
                 for(let i=0; i<all.length; i++){
                     parent.appendChild(all[i])
                 }
             })
             all2.addEventListener('click', () => {
                 parent.innerHTML = ""
+                all1.style.color = "#3A7CFD"; all2.style.color = "#3A7CFD"; activate1.style.color = "var(--select-categories)"; activate2.style.color = "var(--select-categories)", completed1.style.color = "var(--select-categories)"; completed2.style.color = "var(--select-categories)";
                 for(let i=0; i<all.length; i++){
                     parent.appendChild(all[i])
                 }
@@ -192,7 +198,7 @@ input.addEventListener("keydown", function (event) {
 
             nombreEl.innerHTML = all.length + " items left" //Decompte d'elements entrés    
 
-            // Efface l'input après validation
+            //Efface l'input après validation
             input.value = ""; // permet de vider l'input après chaque entrée
             check.style.backgroundImage = "none";
             checkImage.style.display = "none";

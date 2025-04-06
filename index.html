@@ -42,67 +42,63 @@
                     <div class="hidden flex flex-col gap-[1.3rem] py-[1rem]" id="element">
                         <div class="flex justify-between items-center gap-5 px-[2.5rem]" id="sousElement">
                             <div class="flex justify-between gap-[3rem] items-center">
-                                <div
-                                    class="flex items-center justify-center w-[2rem] h-[2rem] border border-[#c2c7c8] rounded-[50%] lg:w-[2.4rem] lg:h-[2.4rem] cursor-pointer" id="select">
+                                <div class="flex items-center justify-center w-[2rem] h-[2rem] border border-[#c2c7c8] rounded-[50%] lg:w-[2.4rem] lg:h-[2.4rem] cursor-pointer"
+                                    id="select">
                                     <img src="./assets/img/check.svg" alt="" class="hidden" id="checkImage2" />
                                 </div>
                                 <p class="font-[400] text-[1.2rem] lg:text-[1.8rem] text-(--text-items)" id="text"></p>
                             </div>
-                            <!-- <img src="./assets/img/exit-option.svg" alt="option exit" class="cursor-pointer" />                      -->
                         </div>
                         <div class="w-full h-[.03rem] bg-(--line-color)"></div>
                     </div>
 
-                    
-                <div class="flex items-center justify-between px-[2.5rem] py-[1rem]" 
-                id="category">
-                    <p
-                        class="font-[400] text-[1.2rem] text-(--select-categories) hover:text-(--hover-select) cursor-pointer transition delay-200 duration-200 ease" id="nombreEl">
-                        0 items left
-                    </p>
-                    <div class="hidden lg:flex lg:items-center lg:justify-center lg:gap-5">
-                        <p class="font-[700] text-[1.4rem] text-(--select-categories) cursor-pointer" id="all1">
-                            All
+                    <div class="flex items-center justify-between px-[2.5rem] py-[1rem] pb-[1.8rem]" id="category">
+                        <p class="font-[400] text-[1.2rem] text-(--select-categories) hover:text-(--hover-select) cursor-pointer transition delay-200 duration-200 ease"
+                            id="nombreEl">
+                            0 items left
                         </p>
-                        <p
-                            class="font-[700] text-[1.4rem] text-(--select-categories) hover:text-(--hover-select) cursor-pointer transition delay-200 duration-200 ease" id="activate1">
-                            Active
-                        </p>
-                        <p
-                            class="font-[700] text-[1.4rem] text-(--select-categories) hover:text-(--hover-select) cursor-pointer transition delay-200 duration-200 ease" id="completed1">
-                            Completed
+                        <div class="hidden lg:flex lg:items-center lg:justify-center lg:gap-5">
+                            <p class="font-[700] text-[1.4rem] text-(--select-categories) cursor-pointer" id="all1">
+                                All
+                            </p>
+                            <p class="font-[700] text-[1.4rem] text-(--select-categories) hover:text-(--hover-select) cursor-pointer transition delay-200 duration-200 ease"
+                                id="activate1">
+                                Active
+                            </p>
+                            <p class="font-[700] text-[1.4rem] text-(--select-categories) hover:text-(--hover-select) cursor-pointer transition delay-200 duration-200 ease"
+                                id="completed1">
+                                Completed
+                            </p>
+                        </div>
+                        <p class="font-[400] text-[1.2rem] text-(--select-categories) hover:text-(--hover-select) cursor-pointer transition delay-200 duration-200 ease"
+                            id="clear">
+                            Clear Completed
                         </p>
                     </div>
-                    <p
-                        class="font-[400] text-[1.2rem] text-(--select-categories) hover:text-(--hover-select) cursor-pointer transition delay-200 duration-200 ease" id="clear">
-                        Clear Completed
-                    </p>
-                </div>
-            </section>
-
+                </section>
             </div>
         </div>
     </section>
 
     <div
-        class="flex items-center justify-center gap-9 py-[1rem] w-auto h-[4.8rem] rounded-[.5rem] blur-[.05rem] drop-shadow-lg mx-[2.5rem] md:mx-[15rem] mb-[5rem] mt-[30rem] bg-(--background-items) lg:hidden">
+        class="flex items-center justify-center gap-9 py-[1rem] w-auto h-[4.8rem] rounded-[.5rem] blur-[.05rem] drop-shadow-lg mx-[2.5rem] md:mx-[15rem] mb-[5rem] mt-[31.5rem] bg-(--background-items) lg:hidden">
         <h1 class="font-[700] text-[1.4rem] text-(--select-categories) cursor-pointer" id="all2">
             All
         </h1>
-        <h1
-            class="font-[700] text-[1.4rem] text-(--select-categories) hover:text-(--hover-select) cursor-pointer transition delay-200 duration-200 ease" id="activate2">
+        <h1 class="font-[700] text-[1.4rem] text-(--select-categories) hover:text-(--hover-select) cursor-pointer transition delay-200 duration-200 ease"
+            id="activate2">
             Active
         </h1>
-        <h1
-            class="font-[700] text-[1.4rem] text-(--select-categories) hover:text-(--hover-select) cursor-pointer transition delay-200 duration-200 ease" id="completed2">
+        <h1 class="font-[700] text-[1.4rem] text-(--select-categories) hover:text-(--hover-select) cursor-pointer transition delay-200 duration-200 ease"
+            id="completed2">
             Completed
         </h1>
     </div>
 
     <h1
-        class="lg:absolute lg:bottom-[-6rem] w-full text-center font-[400] text-[1.4rem] text-(--select-categories) text-center mb-[5rem] lg:mb-[8rem]" >
+        class="lg:absolute lg:bottom-[-6rem] w-full text-center font-[400] text-[1.4rem] text-(--select-categories) text-center mb-[5rem] lg:mb-[8rem]">
         Drag and drop to reorder list
-    </h1> 
+    </h1>
 
     <script src="./assets/javascript/todo.js"></script>
 </body>

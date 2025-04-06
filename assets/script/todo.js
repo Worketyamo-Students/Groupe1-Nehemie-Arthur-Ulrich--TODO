@@ -28,6 +28,7 @@ let all2 = document.getElementById('all2');
 let active2 = document.getElementById('active2');
 let completed2 = document.getElementById('completed2');
 let clearCompleted = document.getElementById('clearCompleted'); // dé-sélection des éléments
+let clearAll = document.getElementById('clearAll'); // bouton pour tous supprimer
 
 // Tableau de compte des éléments
 let Tab = []; // cette tableau contient tous les éléments
@@ -227,7 +228,7 @@ active2.addEventListener("click", () => {
 });
 
 // Implémentation du clear completed
-clearCompleted.addEventListener("click", () => {
+clearAll.addEventListener("click", () => {
     completed.forEach(element => {
         element.remove();
         // suppression de l'élément dans les autres tableaux
@@ -240,17 +241,14 @@ clearCompleted.addEventListener("click", () => {
     count(all);
 });
 
-/* // Implémentation du clear completed
-clearCompleted.addEventListener("click", () => {
+// Implémentation du clear all
+clearAll.addEventListener("click", () => {
     Tab.forEach(element => element.remove()); // supprime tous les éléments
     // Réinitialisation des tableaux
-    Tab = [];
-    all = [];
-    active = [];
-    completed = [];
+    Tab = []; all = []; active = []; completed = [];
     // Réinitialisation du compteur
     count = 0;
-    counter(all);
     parent.style.display = "none"; // Retrait du parent
-}) */
+    counter(all);
+});
 

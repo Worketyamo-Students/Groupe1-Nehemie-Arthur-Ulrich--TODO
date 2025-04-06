@@ -1,7 +1,14 @@
-if(localStorage.getItem("theme") === "dark") {
-    document.body.classList.add("dark-theme");
-    mode.src = "assets/img/light-option.svg";
-}
+// Enregistrement du mode
+window.addEventListener("DOMContentLoaded", () => {  // "window" représente la fenetre du navigateur;  "DOMContentLoaded" permet d'exécuter le code seulement après le charchement du HTML
+    const saveTheme = localStorage.getItem("theme"); // "localStorage" zone de stockage du navigateur ou on peut enregster des données persistentes
+    if(saveTheme === "dark") {                       // "getItem" Récupère une valeur enregistrée dans le localStorage.    
+        document.classList.add("dark-theme");
+        mode.src = "assets/img/dark-option.svg";
+    } else {
+        document.classList.add("dark-theme");
+        mode.src = "assets/img/light-option.svg";
+    }
+});
 
 // Implementation du dark mode
 
@@ -12,8 +19,10 @@ mode.addEventListener("click", () => {
     document.body.classList.toggle("dark-theme");
     if (document.body.classList.contains("dark-theme")) {
         mode.src = "assets/img/dark-option.svg";
+        localStorage.setItem("theme", "dark"); // "setItem" enregistre une donnée dans le localStorage
     } else {
         mode.src = "assets/img/light-option.svg";
+        localStorage.setItem("theme", "light");
     }
 });
 

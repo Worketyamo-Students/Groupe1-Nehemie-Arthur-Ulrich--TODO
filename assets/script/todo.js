@@ -55,15 +55,15 @@ function afficherListe(liste) {
     });
 
     // Application de la couleur active
-    if(liste === all) {
+    if (liste === all) {
         all1.style.color = "#3A7CFD";
         all2.style.color = "#3A7CFD";
     }
-    if(liste === active) {
+    if (liste === active) {
         active1.style.color = "#3A7CFD";
         active2.style.color = "#3A7CFD";
     }
-    if(liste === completed) {
+    if (liste === completed) {
         completed1.style.color = "#3A7CFD";
         completed2.style.color = "#3A7CFD";
     }
@@ -103,7 +103,7 @@ input.addEventListener("keydown", function (event) {
             // clonage de l'élément à chaque entrée de l'utilisateur
             let newElement = element.cloneNode(true); // ".cloneNode(true)" permet de cloner l'element en question ainsi que ses enfants
             newElement.style.display = "flex"; // permet l'affichage de l'élément
-            let textElement = newElement.querySelector("#text"); 
+            let textElement = newElement.querySelector("#text");
 
             if (textElement) {
                 textElement.textContent = this.value; // affectation de la valeur entrée par l'utilisateur
@@ -136,8 +136,8 @@ input.addEventListener("keydown", function (event) {
 
                     // Vérifie si le "newElement" n'est pas encore dans le tableau "all" et "active" et l'ajoute. 
                     // Cela permet d'éviter des doublures
-                    if(!all.includes(newElement)) all.push(newElement); // Ajout de l'élément dans le tableau "all"
-                    if(!completed.includes(newElement)) completed.push(newElement); // Ajout de l'élément dans le tableau "completed"
+                    if (!all.includes(newElement)) all.push(newElement); // Ajout de l'élément dans le tableau "all"
+                    if (!completed.includes(newElement)) completed.push(newElement); // Ajout de l'élément dans le tableau "completed"
                     active = active.filter(element => element !== newElement); // suppression de l'élément dans le tableau "active" car l'élément est déjà sélectionné
                     counter(active);
                 } else {
@@ -146,12 +146,12 @@ input.addEventListener("keydown", function (event) {
                     textElement.style.textDecoration = "none";
                     textElement.style.color = textColor;
 
-                    completed = completed.filter(element=> element !== newElement); // Retrait de l'élément dans le tableau "completed"
-                    if(!active.includes(newElement)) active.push(newElement); // Ajoute l'élément désélectionné dans le tableau "active"
+                    completed = completed.filter(element => element !== newElement); // Retrait de l'élément dans le tableau "completed"
+                    if (!active.includes(newElement)) active.push(newElement); // Ajoute l'élément désélectionné dans le tableau "active"
                     counter(completed); // Mise à jour du compteur
                 }
             });
-                        
+
             Tab.push(newElement);  // Ajoute l'élément dans le tableau
             counter(all); // Appel de la fonction d'affichage du compteur
 
@@ -209,28 +209,35 @@ input.addEventListener("keydown", function (event) {
 // Affichage des listes lors des différents click
 all1.addEventListener("click", () => {
     afficherListe(all);
-}); 
+});
 all2.addEventListener("click", () => {
     afficherListe(all);
-}); 
+});
 completed1.addEventListener("click", () => {
     afficherListe(completed);
-}); 
+});
 completed2.addEventListener("click", () => {
     afficherListe(completed);
-}); 
+});
 active1.addEventListener("click", () => {
     afficherListe(active);
-}); 
+});
 active2.addEventListener("click", () => {
     afficherListe(active);
-}); 
+});
 
 // Implémentation du clear completed
 clearCompleted.addEventListener("click", () => {
-    completed.forEach(element => element.remove());
-    completed = [];
-    count(completed);
+    completed.forEach(element => {
+        element.remove();
+        // suppression de l'élément dans les autres tableaux
+        Tab = Tab.filter(item => item !== element);
+        all = all.filter(item => item !== element);
+        active = active.filter(item => item !== element);
+    });
+    count = count - completed.length; // Décrémentation du compteur
+    completed = []; // Réinitialisation du tableau
+    count(all);
 });
 
 /* // Implémentation du clear completed

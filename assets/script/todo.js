@@ -21,17 +21,18 @@ window.addEventListener("DOMContentLoaded", () => {  // "window" représente la 
         document.body.classList.add("dark-theme");
         mode.src = "assets/img/dark-option.svg";
     } else if(saveTheme === "light") {
-        document.body.classList.add("dark-theme");
+        document.body.classList.remove("dark-theme");
         mode.src = "assets/img/light-option.svg";
     }
 });
 
 // Détection du theme de la machine
-const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-if (!localStorage.getItem("theme")) {
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches; // "matches" renvoit true ou false si la condition est remplie
+if (!localStorage.getItem("theme")) { // on vérifie si l'utilisateur n'a pas choisi manuellement le mode
     if (prefersDark) {
         document.body.classList.add("dark-theme");
         mode.src = "assets/img/dark-option.svg";
+        localStorage.setItem("theme", "dark"); // Enregistre le choix
     }
 }
 
